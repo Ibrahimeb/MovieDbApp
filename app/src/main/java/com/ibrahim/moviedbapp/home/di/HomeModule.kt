@@ -10,8 +10,11 @@ import dagger.Provides
 
 
 @Module
-class HomeModule {
+class HomeModule(val homeView: HomeContract.View) {
 
+     @Provides
+     @HomeScope
+     fun prividerView() = this.homeView
 
     @Provides
     @HomeScope
@@ -19,7 +22,7 @@ class HomeModule {
 
     @Provides
     @HomeScope
-    fun providesPresenter(model:HomeModel) = HomePresenter(model)
+    fun providesPresenter(homeView: HomeContract.View,model:HomeModel) = HomePresenter(homeView,model)
 
 
 

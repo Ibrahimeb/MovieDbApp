@@ -1,14 +1,16 @@
 package com.ibrahim.moviedbapp.app.network
 
 import android.content.Context
+import android.os.Build
+import com.ibrahim.moviedbapp.BuildConfig
+import com.ibrahim.moviedbapp.app.App
 import com.ibrahim.moviedbapp.app.ApplicationContext
 import com.ibrahim.moviedbapp.app.di.AppModule
 import com.ibrahim.moviedbapp.app.di.AppScope
 import com.ibrahim.moviedbapp.commons.Utils.hasNetwork
 import dagger.Module
 import dagger.Provides
-import okhttp3.Cache
-import okhttp3.OkHttpClient
+import okhttp3.*
 import okhttp3.logging.HttpLoggingInterceptor
 import java.io.File
 import java.util.concurrent.TimeUnit
@@ -35,9 +37,9 @@ class NetworkModule {
 
     @Provides
     @AppScope
-    fun providerOkHttpClient(httpLoggingInterceptor: HttpLoggingInterceptor, cache: Cache, context: Context) =
-        OkHttpClient.Builder().addInterceptor(httpLoggingInterceptor).readTimeout(30, TimeUnit.SECONDS)
-            .connectTimeout(30, TimeUnit.SECONDS)
+    fun providerOkHttpClient(httpLoggingInterceptor: HttpLoggingInterceptor, cache: Cache) =
+        OkHttpClient.Builder()
+            .addInterceptor(httpLoggingInterceptor)
             .cache(cache)
             .addInterceptor { chain ->
 
@@ -49,7 +51,7 @@ class NetworkModule {
                 *  we initialize the request and change its header depending on whether
                 *  the device is connected to Internet or not.
                 */
-                request = if (hasNetwork(context)!!)
+                request = if (hasNetwork(App.get())!!)
                 /*
                 *  If there is Internet, get the cache that was stored 5 seconds ago.
                 *  If the cache is older than 5 seconds, then discard it,
@@ -72,7 +74,7 @@ class NetworkModule {
                 chain.proceed(request)
             }
             .build()
-
-
-
 }
+
+
+

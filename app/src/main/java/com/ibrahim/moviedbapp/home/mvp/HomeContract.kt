@@ -6,7 +6,7 @@ interface HomeContract {
 
     interface View:BaseContract.View
 
-    interface Presenter:BaseContract.ServicePresenter<View>{
+    interface Presenter:BaseContract.ServicePresenter{
         fun getMovie()
     }
 

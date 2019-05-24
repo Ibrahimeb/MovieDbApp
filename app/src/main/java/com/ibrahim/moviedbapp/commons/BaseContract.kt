@@ -8,13 +8,13 @@ interface BaseContract {
     }
 
 
-    interface Presenter<T> {
-        fun onAttach(view: T)
+    interface Presenter {
+
         fun onDetach()
     }
 
 
-    interface ServicePresenter<T>:Presenter<T>{
+    interface ServicePresenter:Presenter{
         fun onUnknownError(error: String, caller: String)
 
         fun onTimeoutError(caller: String)
@@ -25,7 +25,7 @@ interface BaseContract {
 
         fun onServerError(caller: String)
 
-        fun infoError(cause: Throwable?, msg: String?)
+
 
     }
 

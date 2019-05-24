@@ -37,7 +37,7 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         get() = application as App
 
 
-    val component by lazy { app.component.plus(HomeModule()) }
+    val component by lazy { app.component.plus(HomeModule(this)) }
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -46,7 +46,6 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         val toolbar: Toolbar = findViewById(R.id.toolbar)
         setSupportActionBar(toolbar)
         component.inject(this)
-        presenter.onAttach(this)
         presenter.getMovie()
 
 

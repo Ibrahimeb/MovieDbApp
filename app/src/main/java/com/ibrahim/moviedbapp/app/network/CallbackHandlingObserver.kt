@@ -32,7 +32,6 @@ abstract class CallbackHandlingObserver<T>(private val presenter: BaseContract.S
             presenter.onUnknownError(ex.message!!, interactor)
         }
 
-        presenter.infoError(ex.cause, ex.message)
 
     }
 
