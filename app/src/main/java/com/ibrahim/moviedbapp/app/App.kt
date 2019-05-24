@@ -12,9 +12,11 @@ class App : Application() {
         DaggerAppComponent.builder().appModule(AppModule(this)).build()
     }
 
+
+
     override fun onCreate() {
         super.onCreate()
-        component.inject(this)
+       component.inject(this)
     }
 
 }

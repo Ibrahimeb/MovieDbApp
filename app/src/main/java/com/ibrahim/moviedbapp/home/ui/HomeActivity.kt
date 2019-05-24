@@ -1,5 +1,6 @@
-package com.ibrahim.moviedbapp
+package com.ibrahim.moviedbapp.home.ui
 
+import android.app.Activity
 import android.os.Bundle
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.android.material.snackbar.Snackbar
@@ -11,8 +12,32 @@ import com.google.android.material.navigation.NavigationView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import android.view.Menu
+import com.ibrahim.moviedbapp.R
+import com.ibrahim.moviedbapp.app.App
+import com.ibrahim.moviedbapp.commons.BaseContract
+import com.ibrahim.moviedbapp.home.di.HomeModule
+import com.ibrahim.moviedbapp.home.mvp.HomeContract
+import com.ibrahim.moviedbapp.home.mvp.HomePresenter
+import javax.inject.Inject
 
-class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
+class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener,HomeContract.View {
+    override fun showProgress(isShow: Boolean) {
+        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+    }
+
+    override fun makeToast(msg: Int) {
+        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+    }
+
+    @Inject
+    lateinit var presenter: HomePresenter
+
+
+    val Activity.app: App
+        get() = application as App
+
+
+    val component by lazy { app.component.plus(HomeModule()) }
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -20,6 +45,10 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         setContentView(R.layout.activity_main)
         val toolbar: Toolbar = findViewById(R.id.toolbar)
         setSupportActionBar(toolbar)
+        component.inject(this)
+        presenter.onAttach(this)
+        presenter.getMovie()
+
 
         val fab: FloatingActionButton = findViewById(R.id.fab)
         fab.setOnClickListener { view ->
@@ -29,7 +58,9 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         val drawerLayout: DrawerLayout = findViewById(R.id.drawer_layout)
         val navView: NavigationView = findViewById(R.id.nav_view)
         val toggle = ActionBarDrawerToggle(
-            this, drawerLayout, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close
+            this, drawerLayout, toolbar,
+            R.string.navigation_drawer_open,
+            R.string.navigation_drawer_close
         )
         drawerLayout.addDrawerListener(toggle)
         toggle.syncState()
