@@ -1,9 +1,9 @@
-package com.ibrahim.moviedbapp.home.mvp.movie
+package com.ibrahim.moviedbapp.home.movie.mvp.movie
 
 import com.ibrahim.moviedbapp.commons.Utils
-import com.ibrahim.moviedbapp.home.api.MovieApi
-import com.ibrahim.moviedbapp.home.models.ResponseMovie
-import com.ibrahim.moviedbapp.home.models.ZipMovie
+import com.ibrahim.moviedbapp.home.movie.api.MovieApi
+import com.ibrahim.moviedbapp.home.movie.models.ResponseMovie
+import com.ibrahim.moviedbapp.home.movie.models.ZipMovie
 import io.reactivex.Observable
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.functions.Function3

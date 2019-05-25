@@ -1,4 +1,4 @@
-package com.ibrahim.moviedbapp.home.models
+package com.ibrahim.moviedbapp.home.movie.models
 
 
 data class ZipMovie(

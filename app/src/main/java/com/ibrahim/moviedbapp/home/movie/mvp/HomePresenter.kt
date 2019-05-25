@@ -1,10 +1,12 @@
-package com.ibrahim.moviedbapp.home.mvp.movie
+package com.ibrahim.moviedbapp.home.movie.mvp
 
 import android.annotation.SuppressLint
 import android.util.Log
 import com.ibrahim.moviedbapp.R
 import com.ibrahim.moviedbapp.app.network.CallbackHandlingObserver
-import com.ibrahim.moviedbapp.home.models.ZipMovie
+import com.ibrahim.moviedbapp.home.movie.models.ZipMovie
+import com.ibrahim.moviedbapp.home.movie.mvp.movie.HomeContract
+import com.ibrahim.moviedbapp.home.movie.mvp.movie.HomeModel
 
 class HomePresenter(private var view: HomeContract.View?, private val homeModel: HomeModel):
     HomeContract.Presenter {
@@ -52,7 +54,9 @@ class HomePresenter(private var view: HomeContract.View?, private val homeModel:
         homeModel.getMovies().subscribeWith(object :CallbackHandlingObserver<ZipMovie>(this,"HomeModel"){
             override fun onSuccess(data: ZipMovie) {
                 view?.showProgress(false)
-                view?.succesfullRequest(data)
+                view?.succesfullSetupDrawerImage(data)
+                view?.succesfullSetZipModel(data)
+                view?.succesfullValidateTypeScreen(data)
             }
 
         })

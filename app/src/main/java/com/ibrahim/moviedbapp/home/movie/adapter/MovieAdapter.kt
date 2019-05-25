@@ -1,8 +1,8 @@
-package com.ibrahim.moviedbapp.home.adapter
+package com.ibrahim.moviedbapp.home.movie.adapter
 
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.ibrahim.moviedbapp.home.models.ResultsItem
+import com.ibrahim.moviedbapp.home.movie.models.ResultsItem
 
 class MovieAdapter(val list: List<ResultsItem>,val mListener : Listener) : RecyclerView.Adapter<MovieViewHolder>() {
 

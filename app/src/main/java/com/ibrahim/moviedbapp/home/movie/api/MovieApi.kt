@@ -1,6 +1,6 @@
-package com.ibrahim.moviedbapp.home.api
+package com.ibrahim.moviedbapp.home.movie.api
 
-import com.ibrahim.moviedbapp.home.models.ResponseMovie
+import com.ibrahim.moviedbapp.home.movie.models.ResponseMovie
 import io.reactivex.Observable
 import retrofit2.http.GET
 import retrofit2.http.Query

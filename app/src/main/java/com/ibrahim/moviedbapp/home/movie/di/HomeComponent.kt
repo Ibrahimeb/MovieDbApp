@@ -1,6 +1,6 @@
-package com.ibrahim.moviedbapp.home.di
+package com.ibrahim.moviedbapp.home.movie.di
 
-import com.ibrahim.moviedbapp.home.ui.fragment.MovieFragment
+import com.ibrahim.moviedbapp.home.movie.ui.MovieFragment
 import dagger.Subcomponent
 
 @HomeScope

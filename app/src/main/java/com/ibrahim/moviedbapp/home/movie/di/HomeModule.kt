@@ -1,9 +1,9 @@
-package com.ibrahim.moviedbapp.home.di
+package com.ibrahim.moviedbapp.home.movie.di
 
-import com.ibrahim.moviedbapp.home.api.MovieApi
-import com.ibrahim.moviedbapp.home.mvp.movie.HomeContract
-import com.ibrahim.moviedbapp.home.mvp.movie.HomeModel
-import com.ibrahim.moviedbapp.home.mvp.movie.HomePresenter
+import com.ibrahim.moviedbapp.home.movie.api.MovieApi
+import com.ibrahim.moviedbapp.home.movie.mvp.movie.HomeContract
+import com.ibrahim.moviedbapp.home.movie.mvp.movie.HomeModel
+import com.ibrahim.moviedbapp.home.movie.mvp.HomePresenter
 import dagger.Module
 import dagger.Provides
 

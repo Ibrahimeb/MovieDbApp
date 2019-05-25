@@ -1,4 +1,4 @@
-package com.ibrahim.moviedbapp.home
+package com.ibrahim.moviedbapp.commons.enums
 
 enum class TypeScreen(value:String) {
     POPULAR("POPULAR"),

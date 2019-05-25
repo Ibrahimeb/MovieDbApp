@@ -1,12 +1,11 @@
-package com.ibrahim.moviedbapp.home.models
+package com.ibrahim.moviedbapp.home.tvShow.models
 
 import android.os.Parcelable
 import com.google.gson.annotations.SerializedName
 import kotlinx.android.parcel.Parcelize
-import org.parceler.Parcel
 
 @Parcelize
-data class ResponseMovie(
+data class ResponseTvShow(
 
 	@field:SerializedName("page")
 	val page: Int? = null,

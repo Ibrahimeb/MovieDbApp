@@ -1,4 +1,4 @@
-package com.ibrahim.moviedbapp.home.di
+package com.ibrahim.moviedbapp.home.movie.di
 
 import javax.inject.Scope
 
