@@ -6,7 +6,7 @@ import com.ibrahim.moviedbapp.home.models.ZipMovie
 interface HomeContract {
 
     interface View:BaseContract.View{
-    fun succesfullRequest(zip:ZipMovie)
+    fun succesfullRequest(zip:ZipMovie?)
 
     }
 

@@ -16,6 +16,8 @@ import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.navigation.NavigationView
 import com.ibrahim.moviedbapp.R
 import com.ibrahim.moviedbapp.commons.Utils
+import com.ibrahim.moviedbapp.home.BundlesKey
+import com.ibrahim.moviedbapp.home.TypeScreen
 import com.ibrahim.moviedbapp.home.models.ZipMovie
 import com.ibrahim.moviedbapp.home.ui.fragment.MovieFragment
 import com.squareup.picasso.Picasso
@@ -29,7 +31,7 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
     val TAG = HomeActivity::class.java.simpleName
     var fragmentActual: Fragment? = null
-    lateinit var zip: ZipMovie
+    var zip: ZipMovie?=null
 
     private val navController: NavController by lazy {
         Navigation.findNavController(this, R.id.container_home)
@@ -43,19 +45,22 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         val bundle = Bundle()
         when (item.itemId) {
             R.id.nav_popular -> {
-                bundle.putParcelable(MovieFragment.ARG_ITEM_MOVIE,zip.popularList)
+                bundle.putParcelable(BundlesKey.ARG_ITEM_MOVIE.name,zip?.popularList)
+                bundle.putString(BundlesKey.ARG_TYPE_SCREEN_MOVIE.name,TypeScreen.POPULAR.name)
                 navController.navigate(R.id.popularFragment,bundle)
                 return@OnNavigationItemSelectedListener true
             }
             R.id.nav_up_coming -> {
-                bundle.putParcelable(MovieFragment.ARG_ITEM_MOVIE,zip.upComingList)
+                bundle.putParcelable(BundlesKey.ARG_ITEM_MOVIE.name,zip?.upComingList)
+                bundle.putString(BundlesKey.ARG_TYPE_SCREEN_MOVIE.name,TypeScreen.UPCOMING.name)
+
                 navController.navigate(R.id.popularFragment,bundle)
-
-
                 return@OnNavigationItemSelectedListener true
             }
             R.id.nav_top_rate -> {
-                bundle.putParcelable(MovieFragment.ARG_ITEM_MOVIE, zip.topRateList)
+                bundle.putParcelable(BundlesKey.ARG_ITEM_MOVIE.name, zip?.topRateList)
+                bundle.putString(BundlesKey.ARG_TYPE_SCREEN_MOVIE.name,TypeScreen.TO_RATE.name)
+
                 navController.navigate(R.id.popularFragment,bundle)
                 return@OnNavigationItemSelectedListener true
             }
