@@ -9,9 +9,26 @@
 
     <string name="menu_home">Home</string>
     <string name="menu_gallery">Gallery</string>
-    <string name="menu_slideshow">Slideshow</string>
-    <string name="menu_tools">Tools</string>
-    <string name="menu_share">Share</string>
-    <string name="menu_send">Send</string>
+
+    <string name="menu_movie">Movie</string>
+    <string name="menu_tv">tv Show</string>
+
+    <string name="menu_popular">Most Popular</string>
+    <string name="menu_coming">Up Coming</string>
+    <string name="menu_top_rate">Top Rate</string>
+
+
+    <!-- ERRORS -->
+    <string name="error_unknown">An unknown error occurred.</string>
+    <string name="error_timeout">The wait time to the server has been exhausted.</string>
+    <string name="error_network">Error with your internet connection.</string>
+    <string name="error_badrequest">not found</string>
+    <string name="error_server">Error on the server.</string>
+
+
     <string name="connectivity_exception">No connectivity exception</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="todo">TODO</string>
 </resources>

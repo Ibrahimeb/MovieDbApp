@@ -1,8 +1,12 @@
 package com.ibrahim.moviedbapp.home.models
 
+import android.os.Parcelable
 import com.google.gson.annotations.SerializedName
+import kotlinx.android.parcel.Parcelize
+import org.parceler.Parcel
 
-data class ResponseMoviePopular(
+@Parcelize
+data class ResponseMovie(
 
 	@field:SerializedName("page")
 	val page: Int? = null,
@@ -11,8 +15,8 @@ data class ResponseMoviePopular(
 	val totalPages: Int? = null,
 
 	@field:SerializedName("results")
-	val results: List<ResultsItem?>? = null,
+	val results: List<ResultsItem>? = null,
 
 	@field:SerializedName("total_results")
 	val totalResults: Int? = null
-)
+) : Parcelable

@@ -1,12 +1,10 @@
 package com.ibrahim.moviedbapp.home.di
 
-import com.ibrahim.moviedbapp.app.di.AppComponent
-import com.ibrahim.moviedbapp.home.ui.HomeActivity
-import dagger.Component
+import com.ibrahim.moviedbapp.home.ui.fragment.MovieFragment
 import dagger.Subcomponent
 
 @HomeScope
 @Subcomponent (modules = [HomeModule::class])
 interface HomeComponent {
-    fun inject(homeActivity: HomeActivity)
+    fun inject(popularFragment: MovieFragment)
 }

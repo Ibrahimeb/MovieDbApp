@@ -1,7 +1,11 @@
 package com.ibrahim.moviedbapp.home.models
 
+import android.os.Parcelable
 import com.google.gson.annotations.SerializedName
+import kotlinx.android.parcel.Parcelize
+import org.parceler.Parcel
 
+@Parcelize
 data class ResultsItem(
 
 	@field:SerializedName("overview")
@@ -45,4 +49,4 @@ data class ResultsItem(
 
 	@field:SerializedName("vote_count")
 	val voteCount: Int? = null
-)
+) : Parcelable

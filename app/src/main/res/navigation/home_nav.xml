@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools" android:id="@+id/home_nav"
+            app:startDestination="@+id/popularFragment">
+
+    <fragment android:id="@+id/popularFragment" android:name="com.ibrahim.moviedbapp.home.ui.fragment.MovieFragment"
+              android:label="fragment_popular" tools:layout="@layout/fragment_popular"/>
+    <fragment android:id="@+id/tvFragment" android:name="com.ibrahim.moviedbapp.home.ui.fragment.TvFragment" android:label="fragment_tv"
+              tools:layout="@layout/fragment_tv"/>
+</navigation>

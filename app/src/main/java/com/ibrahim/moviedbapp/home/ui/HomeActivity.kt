@@ -1,43 +1,67 @@
 package com.ibrahim.moviedbapp.home.ui
 
-import android.app.Activity
 import android.os.Bundle
-import com.google.android.material.floatingactionbutton.FloatingActionButton
-import com.google.android.material.snackbar.Snackbar
-import androidx.core.view.GravityCompat
-import androidx.appcompat.app.ActionBarDrawerToggle
+import android.util.Log
+import android.view.Menu
 import android.view.MenuItem
-import androidx.drawerlayout.widget.DrawerLayout
-import com.google.android.material.navigation.NavigationView
+import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
-import android.view.Menu
+import androidx.core.view.GravityCompat
+import androidx.drawerlayout.widget.DrawerLayout
+import androidx.fragment.app.Fragment
+import androidx.navigation.NavController
+import androidx.navigation.Navigation
+import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.google.android.material.navigation.NavigationView
 import com.ibrahim.moviedbapp.R
-import com.ibrahim.moviedbapp.app.App
-import com.ibrahim.moviedbapp.commons.BaseContract
-import com.ibrahim.moviedbapp.home.di.HomeModule
-import com.ibrahim.moviedbapp.home.mvp.HomeContract
-import com.ibrahim.moviedbapp.home.mvp.HomePresenter
-import javax.inject.Inject
+import com.ibrahim.moviedbapp.commons.Utils
+import com.ibrahim.moviedbapp.home.models.ZipMovie
+import com.ibrahim.moviedbapp.home.ui.fragment.MovieFragment
+import com.squareup.picasso.Picasso
+import kotlinx.android.synthetic.main.app_bar_main.*
+import kotlinx.android.synthetic.main.nav_header_main.*
 
-class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener,HomeContract.View {
-    override fun showProgress(isShow: Boolean) {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener,
+    MovieFragment.OnFragmentInteractionListener {
+
+
+
+    val TAG = HomeActivity::class.java.simpleName
+    var fragmentActual: Fragment? = null
+    lateinit var zip: ZipMovie
+
+    private val navController: NavController by lazy {
+        Navigation.findNavController(this, R.id.container_home)
     }
 
-    override fun makeToast(msg: Int) {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+    override fun setZipModel(zip: ZipMovie) {
+        this.zip = zip
     }
 
-    @Inject
-    lateinit var presenter: HomePresenter
+    private val mOnNavigationItemSelectedListener = BottomNavigationView.OnNavigationItemSelectedListener { item ->
+        val bundle = Bundle()
+        when (item.itemId) {
+            R.id.nav_popular -> {
+                bundle.putParcelable(MovieFragment.ARG_ITEM_MOVIE,zip.popularList)
+                navController.navigate(R.id.popularFragment,bundle)
+                return@OnNavigationItemSelectedListener true
+            }
+            R.id.nav_up_coming -> {
+                bundle.putParcelable(MovieFragment.ARG_ITEM_MOVIE,zip.upComingList)
+                navController.navigate(R.id.popularFragment,bundle)
 
 
-    val Activity.app: App
-        get() = application as App
-
-
-    val component by lazy { app.component.plus(HomeModule(this)) }
+                return@OnNavigationItemSelectedListener true
+            }
+            R.id.nav_top_rate -> {
+                bundle.putParcelable(MovieFragment.ARG_ITEM_MOVIE, zip.topRateList)
+                navController.navigate(R.id.popularFragment,bundle)
+                return@OnNavigationItemSelectedListener true
+            }
+        }
+        false
+    }
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -45,15 +69,22 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         setContentView(R.layout.activity_main)
         val toolbar: Toolbar = findViewById(R.id.toolbar)
         setSupportActionBar(toolbar)
-        component.inject(this)
-        presenter.getMovie()
+        setupView()
+
+    }
 
 
-        val fab: FloatingActionButton = findViewById(R.id.fab)
-        fab.setOnClickListener { view ->
-            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                .setAction("Action", null).show()
-        }
+    fun setupView() {
+        setupDrawer()
+        setupNavigationButton()
+    }
+    fun setupNavigationButton(){
+        bottom_navigation.selectedItemId = R.id.nav_popular
+        bottom_navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener)
+    }
+
+
+    fun setupDrawer() {
         val drawerLayout: DrawerLayout = findViewById(R.id.drawer_layout)
         val navView: NavigationView = findViewById(R.id.nav_view)
         val toggle = ActionBarDrawerToggle(
@@ -63,8 +94,17 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         )
         drawerLayout.addDrawerListener(toggle)
         toggle.syncState()
-
         navView.setNavigationItemSelectedListener(this)
+    }
+
+    override fun setupImageDrawer(path: String) {
+        Log.i(TAG, "setupImageDrawer: $path")
+        Picasso.get().load(Utils.getImageUrlLarge(path)).placeholder(R.drawable.placeholder).fit().into(iv_header_nav)
+    }
+
+
+    override fun updateFragmentActual(fragment: Fragment) {
+        fragmentActual = fragment
     }
 
     override fun onBackPressed() {
@@ -95,24 +135,13 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
         // Handle navigation view item clicks here.
         when (item.itemId) {
-            R.id.nav_home -> {
+            R.id.nav_movie -> {
                 // Handle the camera action
             }
-            R.id.nav_gallery -> {
+            R.id.nav_tv -> {
 
             }
-            R.id.nav_slideshow -> {
 
-            }
-            R.id.nav_tools -> {
-
-            }
-            R.id.nav_share -> {
-
-            }
-            R.id.nav_send -> {
-
-            }
         }
         val drawerLayout: DrawerLayout = findViewById(R.id.drawer_layout)
         drawerLayout.closeDrawer(GravityCompat.START)
