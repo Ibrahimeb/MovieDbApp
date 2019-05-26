@@ -17,10 +17,8 @@ import com.ibrahim.moviedbapp.R
 import com.ibrahim.moviedbapp.commons.Utils
 import com.ibrahim.moviedbapp.commons.enums.BundlesKey
 import com.ibrahim.moviedbapp.commons.enums.TypeScreen
-import com.ibrahim.moviedbapp.home.movie.models.ResponseMovie
 import com.ibrahim.moviedbapp.home.movie.models.ZipMovie
 import com.ibrahim.moviedbapp.home.movie.ui.MovieFragment
-import com.ibrahim.moviedbapp.home.tvShow.models.ResponseTvShow
 import com.ibrahim.moviedbapp.home.tvShow.models.ZipModelTv
 import com.ibrahim.moviedbapp.home.tvShow.ui.TvFragment
 import com.squareup.picasso.Picasso
@@ -60,13 +58,19 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                     BundlesKey.ARG_TYPE_SCREEN_MOVIE.name,
                     TypeScreen.POPULAR.name)
 
+
+
+
+
                 when(typeView){
                     TypeScreen.MOVIE.name ->{
                         bundle.putParcelable(BundlesKey.ARG_ITEM_MOVIE.name,zipMovie?.popularList)
+                        bundle.putParcelable(BundlesKey.ARG_LIST_CATEGORY.name,zipMovie?.categoryMovie)
                         navController.navigate(R.id.popularFragment,bundle)
                     }
                     TypeScreen.TV_SHOW.name -> {
                         bundle.putParcelable(BundlesKey.ARG_ITEM_MOVIE.name,zipTvShow?.popularResponse)
+                        bundle.putParcelable(BundlesKey.ARG_LIST_CATEGORY.name,zipTvShow?.categoryTvShow)
                         navController.navigate(R.id.tvFragment,bundle)
                     }
                 }
@@ -84,10 +88,12 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                 when(typeView){
                     TypeScreen.MOVIE.name ->{
                         bundle.putParcelable(BundlesKey.ARG_ITEM_MOVIE.name,zipMovie?.upComingList)
+                        bundle.putParcelable(BundlesKey.ARG_LIST_CATEGORY.name,zipMovie?.categoryMovie)
                         navController.navigate(R.id.popularFragment,bundle)
                     }
                     TypeScreen.TV_SHOW.name -> {
                         bundle.putParcelable(BundlesKey.ARG_ITEM_MOVIE.name,zipTvShow?.lastedResponse)
+                        bundle.putParcelable(BundlesKey.ARG_LIST_CATEGORY.name,zipTvShow?.categoryTvShow)
                         navController.navigate(R.id.tvFragment,bundle)
                     }
 
@@ -105,10 +111,12 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                 when(typeView){
                     TypeScreen.MOVIE.name ->{
                         bundle.putParcelable(BundlesKey.ARG_ITEM_MOVIE.name,zipMovie?.topRateList)
+                        bundle.putParcelable(BundlesKey.ARG_LIST_CATEGORY.name,zipMovie?.categoryMovie)
                         navController.navigate(R.id.popularFragment,bundle)
                     }
                     TypeScreen.TV_SHOW.name -> {
                         bundle.putParcelable(BundlesKey.ARG_ITEM_MOVIE.name,zipTvShow?.topRateResponse)
+                        bundle.putParcelable(BundlesKey.ARG_LIST_CATEGORY.name,zipTvShow?.categoryTvShow)
                         navController.navigate(R.id.tvFragment,bundle)
                     }
 
@@ -178,15 +186,7 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         return true
     }
 
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        return when (item.itemId) {
-            R.id.action_settings -> true
-            else -> super.onOptionsItemSelected(item)
-        }
-    }
+
 
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
         // Handle navigation view item clicks here.

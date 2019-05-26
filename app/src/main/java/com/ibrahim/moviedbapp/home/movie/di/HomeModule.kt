@@ -1,8 +1,8 @@
 package com.ibrahim.moviedbapp.home.movie.di
 
 import com.ibrahim.moviedbapp.home.movie.api.MovieApi
-import com.ibrahim.moviedbapp.home.movie.mvp.movie.HomeContract
-import com.ibrahim.moviedbapp.home.movie.mvp.movie.HomeModel
+import com.ibrahim.moviedbapp.home.movie.mvp.HomeContract
+import com.ibrahim.moviedbapp.home.movie.mvp.HomeModel
 import com.ibrahim.moviedbapp.home.movie.mvp.HomePresenter
 import dagger.Module
 import dagger.Provides

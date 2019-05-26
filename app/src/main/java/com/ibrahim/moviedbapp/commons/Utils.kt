@@ -35,6 +35,7 @@ object Utils {
     fun getImageUrlMedium(path:String) = "https://image.tmdb.org/t/p/w300$path"
     fun getImageUrlLarge(path:String) = "https://image.tmdb.org/t/p/w500$path"
     fun getApiKey() = "e633d5667f2c7b610499bcce8643aa5c"
+    fun getLanguaje() = "en-US"
 
     fun getRamdonInt(size:Int) = Math.random()*size
 
