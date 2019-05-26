@@ -34,4 +34,5 @@
     <string name="action_filter">filter</string>
     <string name="release_date">Release Date:</string>
     <string name="similar_movies">Similar Movies</string>
+    <string name="trailler">Trailler</string>
 </resources>

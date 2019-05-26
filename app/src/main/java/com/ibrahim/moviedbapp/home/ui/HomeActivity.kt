@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
+import android.view.View
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
@@ -26,13 +27,12 @@ import kotlinx.android.synthetic.main.app_bar_main.*
 import kotlinx.android.synthetic.main.nav_header_main.*
 
 class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener,
-    MovieFragment.OnFragmentInteractionListener,TvFragment.OnFragmentInteractionListener {
-
+    MovieFragment.OnFragmentInteractionListener, TvFragment.OnFragmentInteractionListener {
 
 
     private val TAG: String = HomeActivity::class.java.simpleName
-    private var zipMovie: ZipMovie?=null
-    private var zipTvShow: ZipModelTv?=null
+    private var zipMovie: ZipMovie? = null
+    private var zipTvShow: ZipModelTv? = null
     private var typeView = TypeScreen.MOVIE.name
 
     private val navController: NavController by lazy {
@@ -48,7 +48,6 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     }
 
 
-
     private val mOnNavigationItemSelectedListener = BottomNavigationView.OnNavigationItemSelectedListener { item ->
         val bundle = Bundle()
         when (item.itemId) {
@@ -56,22 +55,23 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
                 bundle.putString(
                     BundlesKey.ARG_TYPE_SCREEN.name,
-                    TypeScreen.POPULAR.name)
+                    TypeScreen.POPULAR.name
+                )
 
 
 
 
 
-                when(typeView){
-                    TypeScreen.MOVIE.name ->{
-                        bundle.putParcelable(BundlesKey.ARG_ITEM_MOVIE.name,zipMovie?.popularList)
-                        bundle.putParcelable(BundlesKey.ARG_LIST_CATEGORY.name,zipMovie?.categoryMovie)
-                        navController.navigate(R.id.popularFragment,bundle)
+                when (typeView) {
+                    TypeScreen.MOVIE.name -> {
+                        bundle.putParcelable(BundlesKey.ARG_ITEM_MOVIE.name, zipMovie?.popularList)
+                        bundle.putParcelable(BundlesKey.ARG_LIST_CATEGORY.name, zipMovie?.categoryMovie)
+                        navController.navigate(R.id.popularFragment, bundle)
                     }
                     TypeScreen.TV_SHOW.name -> {
-                        bundle.putParcelable(BundlesKey.ARG_ITEM_MOVIE.name,zipTvShow?.popularResponse)
-                        bundle.putParcelable(BundlesKey.ARG_LIST_CATEGORY.name,zipTvShow?.categoryTvShow)
-                        navController.navigate(R.id.tvFragment,bundle)
+                        bundle.putParcelable(BundlesKey.ARG_ITEM_MOVIE.name, zipTvShow?.popularResponse)
+                        bundle.putParcelable(BundlesKey.ARG_LIST_CATEGORY.name, zipTvShow?.categoryTvShow)
+                        navController.navigate(R.id.tvFragment, bundle)
                     }
                 }
 
@@ -83,18 +83,19 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
                 bundle.putString(
                     BundlesKey.ARG_TYPE_SCREEN.name,
-                    TypeScreen.UPCOMING.name)
+                    TypeScreen.UPCOMING.name
+                )
 
-                when(typeView){
-                    TypeScreen.MOVIE.name ->{
-                        bundle.putParcelable(BundlesKey.ARG_ITEM_MOVIE.name,zipMovie?.upComingList)
-                        bundle.putParcelable(BundlesKey.ARG_LIST_CATEGORY.name,zipMovie?.categoryMovie)
-                        navController.navigate(R.id.popularFragment,bundle)
+                when (typeView) {
+                    TypeScreen.MOVIE.name -> {
+                        bundle.putParcelable(BundlesKey.ARG_ITEM_MOVIE.name, zipMovie?.upComingList)
+                        bundle.putParcelable(BundlesKey.ARG_LIST_CATEGORY.name, zipMovie?.categoryMovie)
+                        navController.navigate(R.id.popularFragment, bundle)
                     }
                     TypeScreen.TV_SHOW.name -> {
-                        bundle.putParcelable(BundlesKey.ARG_ITEM_MOVIE.name,zipTvShow?.lastedResponse)
-                        bundle.putParcelable(BundlesKey.ARG_LIST_CATEGORY.name,zipTvShow?.categoryTvShow)
-                        navController.navigate(R.id.tvFragment,bundle)
+                        bundle.putParcelable(BundlesKey.ARG_ITEM_MOVIE.name, zipTvShow?.lastedResponse)
+                        bundle.putParcelable(BundlesKey.ARG_LIST_CATEGORY.name, zipTvShow?.categoryTvShow)
+                        navController.navigate(R.id.tvFragment, bundle)
                     }
 
 
@@ -105,19 +106,20 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
                 bundle.putString(
                     BundlesKey.ARG_TYPE_SCREEN.name,
-                    TypeScreen.TO_RATE.name)
+                    TypeScreen.TO_RATE.name
+                )
 
 
-                when(typeView){
-                    TypeScreen.MOVIE.name ->{
-                        bundle.putParcelable(BundlesKey.ARG_ITEM_MOVIE.name,zipMovie?.topRateList)
-                        bundle.putParcelable(BundlesKey.ARG_LIST_CATEGORY.name,zipMovie?.categoryMovie)
-                        navController.navigate(R.id.popularFragment,bundle)
+                when (typeView) {
+                    TypeScreen.MOVIE.name -> {
+                        bundle.putParcelable(BundlesKey.ARG_ITEM_MOVIE.name, zipMovie?.topRateList)
+                        bundle.putParcelable(BundlesKey.ARG_LIST_CATEGORY.name, zipMovie?.categoryMovie)
+                        navController.navigate(R.id.popularFragment, bundle)
                     }
                     TypeScreen.TV_SHOW.name -> {
-                        bundle.putParcelable(BundlesKey.ARG_ITEM_MOVIE.name,zipTvShow?.topRateResponse)
-                        bundle.putParcelable(BundlesKey.ARG_LIST_CATEGORY.name,zipTvShow?.categoryTvShow)
-                        navController.navigate(R.id.tvFragment,bundle)
+                        bundle.putParcelable(BundlesKey.ARG_ITEM_MOVIE.name, zipTvShow?.topRateResponse)
+                        bundle.putParcelable(BundlesKey.ARG_LIST_CATEGORY.name, zipTvShow?.categoryTvShow)
+                        navController.navigate(R.id.tvFragment, bundle)
                     }
 
 
@@ -144,7 +146,8 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         setupDrawer()
         setupNavigationButton()
     }
-    fun setupNavigationButton(){
+
+    fun setupNavigationButton() {
         bottom_navigation.selectedItemId = R.id.nav_popular
         bottom_navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener)
     }
@@ -169,9 +172,8 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     }
 
 
-
-
     override fun onBackPressed() {
+        bottom_navigation.visibility = View.VISIBLE
         val drawerLayout: DrawerLayout = findViewById(R.id.drawer_layout)
         if (drawerLayout.isDrawerOpen(GravityCompat.START)) {
             drawerLayout.closeDrawer(GravityCompat.START)
@@ -180,15 +182,10 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         }
     }
 
-    override fun onCreateOptionsMenu(menu: Menu): Boolean {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        menuInflater.inflate(R.menu.main, menu)
-        return true
-    }
-
-
 
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
+        bottom_navigation.visibility = View.VISIBLE
+
         // Handle navigation view item clicks here.
         when (item.itemId) {
             R.id.nav_movie -> {
@@ -197,6 +194,7 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                 navController.navigate(R.id.popularFragment)
             }
             R.id.nav_tv -> {
+
                 typeView = TypeScreen.TV_SHOW.name
                 bottom_navigation.selectedItemId = R.id.nav_popular
                 navController.navigate(R.id.tvFragment)

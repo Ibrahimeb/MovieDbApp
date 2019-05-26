@@ -94,45 +94,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="778e6778-ba17-4e8e-afe1-5c1a4375803a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle____local_aars___C__Users_ibrah_Documents_codigos_kotlin_MovieDbApp_app_libs_YouTubeAndroidPlayerApi_jar_unspecified_jar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/libs/YouTubeAndroidPlayerApi.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/ibrahim/moviedbapp/details/api/DetailsApi.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/ibrahim/moviedbapp/details/di/DetailScope.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/ibrahim/moviedbapp/details/di/DetailsComponent.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/ibrahim/moviedbapp/details/di/DetailsModule.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/ibrahim/moviedbapp/details/mvp/DetailsContract.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/ibrahim/moviedbapp/details/mvp/DetailsModel.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/ibrahim/moviedbapp/details/mvp/DetailsPresenter.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/ibrahim/moviedbapp/details/ui/DetailsMovieFragment.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/animator/slide_left_in.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/animator/slide_left_out.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/animator/slide_right_in.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/animator/slide_right_out.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_details_movie.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/navEditor.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/navEditor.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/ibrahim/moviedbapp/details/models/ZipDetailsMovie.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-v24/logo1.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/app/app.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/ibrahim/moviedbapp/app/di/AppComponent.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/ibrahim/moviedbapp/app/di/AppComponent.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/ibrahim/moviedbapp/app/network/ApiModule.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/ibrahim/moviedbapp/app/network/ApiModule.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/ibrahim/moviedbapp/commons/enums/BundlesKey.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/ibrahim/moviedbapp/commons/enums/BundlesKey.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/ibrahim/moviedbapp/home/movie/adapter/MovieAdapter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/ibrahim/moviedbapp/home/movie/adapter/MovieAdapter.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/ibrahim/moviedbapp/home/movie/adapter/MovieViewHolder.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/ibrahim/moviedbapp/home/movie/adapter/MovieViewHolder.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/ibrahim/moviedbapp/home/movie/di/HomeComponent.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/ibrahim/moviedbapp/home/movie/di/HomeComponent.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/ibrahim/moviedbapp/home/movie/mvp/HomePresenter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/ibrahim/moviedbapp/home/movie/mvp/HomePresenter.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/ibrahim/moviedbapp/details/api/DetailsApi.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/ibrahim/moviedbapp/details/api/DetailsApi.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/ibrahim/moviedbapp/details/mvp/DetailsContract.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/ibrahim/moviedbapp/details/mvp/DetailsContract.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/ibrahim/moviedbapp/details/mvp/DetailsModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/ibrahim/moviedbapp/details/mvp/DetailsModel.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/ibrahim/moviedbapp/details/mvp/DetailsPresenter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/ibrahim/moviedbapp/details/mvp/DetailsPresenter.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/ibrahim/moviedbapp/details/ui/DetailsMovieFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/ibrahim/moviedbapp/details/ui/DetailsMovieFragment.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/ibrahim/moviedbapp/home/movie/ui/MovieFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/ibrahim/moviedbapp/home/movie/ui/MovieFragment.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/ibrahim/moviedbapp/home/tvShow/adapter/TvShowAdapter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/ibrahim/moviedbapp/home/tvShow/adapter/TvShowAdapter.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/ibrahim/moviedbapp/home/tvShow/adapter/TvShowViewHolder.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/ibrahim/moviedbapp/home/tvShow/adapter/TvShowViewHolder.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/ibrahim/moviedbapp/home/tvShow/models/ResponseTvShow.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/ibrahim/moviedbapp/home/tvShow/models/ResponseTvShow.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/ibrahim/moviedbapp/home/tvShow/models/ResultsItem.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/ibrahim/moviedbapp/home/tvShow/models/ResultsItemTv.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/ibrahim/moviedbapp/home/tvShow/mvp/TvShowContract.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/ibrahim/moviedbapp/home/tvShow/mvp/TvShowContract.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/ibrahim/moviedbapp/home/tvShow/mvp/TvShowPresenter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/ibrahim/moviedbapp/home/tvShow/mvp/TvShowPresenter.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/ibrahim/moviedbapp/home/tvShow/ui/TvFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/ibrahim/moviedbapp/home/tvShow/ui/TvFragment.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/ibrahim/moviedbapp/home/ui/HomeActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/ibrahim/moviedbapp/home/ui/HomeActivity.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/color/background_chip_selector.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/color/background_chip_selector.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/navigation/home_nav.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/navigation/home_nav.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/colors.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/colors.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_details_movie.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_details_movie.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_popular.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_popular.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_tv.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_tv.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -149,125 +125,76 @@
   <component name="ExternalProjectsManager">
     <system id="GRADLE">
       <state>
-        <projects_view />
+        <task path="$PROJECT_DIR$/app">
+          <activation />
+        </task>
+        <projects_view>
+          <tree_state>
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="MovieDbApp" type="f1a62948:ProjectNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="MovieDbApp" type="f1a62948:ProjectNode" />
+                <item name=":app" type="2d1252cf:ModuleNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="MovieDbApp" type="f1a62948:ProjectNode" />
+                <item name=":app" type="2d1252cf:ModuleNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="MovieDbApp" type="f1a62948:ProjectNode" />
+                <item name=":app" type="2d1252cf:ModuleNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="android" type="c8890929:TasksNode$1" />
+              </path>
+            </expand>
+            <select />
+          </tree_state>
+        </projects_view>
       </state>
     </system>
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.48782235">
-      <split-first>
-        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ibrahim/moviedbapp/details/ui/DetailsMovieFragment.kt">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="205">
-                  <caret line="106" selection-start-line="106" selection-end-line="106" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ibrahim/moviedbapp/home/movie/ui/MovieFragment.kt">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="471">
-                  <caret line="134" column="9" selection-start-line="134" selection-start-column="9" selection-end-line="134" selection-end-column="9" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ibrahim/moviedbapp/home/movie/di/HomeComponent.kt">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="119">
-                  <caret line="8" column="43" selection-start-line="8" selection-start-column="43" selection-end-line="8" selection-end-column="43" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ibrahim/moviedbapp/home/movie/mvp/HomePresenter.kt">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="884">
-                  <caret line="59" selection-start-line="59" selection-end-line="59" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ibrahim/moviedbapp/home/movie/mvp/HomeContract.kt">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="111">
-                  <caret line="11" column="26" selection-start-line="11" selection-start-column="26" selection-end-line="11" selection-end-column="26" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ibrahim/moviedbapp/home/tvShow/ui/TvFragment.kt">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="-1325">
-                  <caret line="56" column="72" selection-start-line="56" selection-end-line="57" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ibrahim/moviedbapp/home/ui/HomeActivity.kt">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="221">
-                  <caret line="37" column="24" selection-start-line="37" selection-start-column="24" selection-end-line="37" selection-end-column="24" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_details_movie.xml">
-              <provider editor-type-id="android-designer2" />
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="494">
-                  <caret line="113" column="49" selection-start-line="113" selection-start-column="49" selection-end-line="113" selection-end-column="49" />
-                  <folding>
-                    <element signature="e#3477#3499#0" expanded="true" />
-                    <element signature="e#4435#4459#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="559">
-                  <caret line="34" column="45" selection-start-line="34" selection-start-column="45" selection-end-line="34" selection-end-column="45" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-first>
-      <split-second>
-        <leaf>
-          <file pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ibrahim/moviedbapp/home/tvShow/ui/TvFragment.kt">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="352">
-                  <caret line="151" column="28" selection-start-line="151" selection-start-column="28" selection-end-line="151" selection-end-column="28" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ibrahim/moviedbapp/home/tvShow/mvp/TvShowPresenter.kt">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="205">
-                  <caret line="21" column="39" selection-start-line="21" selection-start-column="39" selection-end-line="21" selection-end-column="39" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-second>
-    </splitter>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ibrahim/moviedbapp/home/tvShow/ui/TvFragment.kt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="366">
+              <caret line="172" column="49" lean-forward="true" selection-start-line="172" selection-start-column="49" selection-end-line="172" selection-end-column="49" />
+              <folding>
+                <element signature="e#47#1867#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_tv.xml">
+          <provider editor-type-id="android-designer2" />
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="375">
+              <caret line="30" column="44" selection-start-line="30" selection-start-column="44" selection-end-line="30" selection-end-column="44" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_popular.xml">
+          <provider editor-type-id="android-designer2" />
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="357">
+              <caret line="24" column="44" selection-start-line="24" selection-start-column="40" selection-end-line="24" selection-end-column="44" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -279,9 +206,9 @@
         <option value="layoutResourceFile_vertical" />
         <option value="resourceFile" />
         <option value="Kotlin File" />
-        <option value="Kotlin Class" />
         <option value="Interface" />
         <option value="Kotlin Interface" />
+        <option value="Kotlin Class" />
       </list>
     </option>
   </component>
@@ -291,10 +218,15 @@
       <find>onopt</find>
       <find>update</find>
       <find>ResultsItem</find>
-      <find>oncre</find>
       <find>se</find>
       <find>ResponseCategory</find>
       <find>goto</find>
+      <find>got</find>
+      <find>onbac</find>
+      <find>oncre</find>
+      <find>prese</find>
+      <find>web</find>
+      <find>oncrea</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -303,10 +235,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/nav_header_main.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/menu/main.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/ibrahim/moviedbapp/commons/CategoryAdapter.kt" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/ibrahim/moviedbapp/home/movie/api/MovieApi.kt" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/ibrahim/moviedbapp/commons/Utils.kt" />
         <option value="$PROJECT_DIR$/app/src/main/res/color/background_chip_selector.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/item_filter_categorys.xml" />
@@ -317,14 +245,11 @@
         <option value="$PROJECT_DIR$/app/src/main/java/com/ibrahim/moviedbapp/home/movie/models/ZipMovie.kt" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/ibrahim/moviedbapp/commons/models/ResponseCategory.kt" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/ibrahim/moviedbapp/commons/models/GenresItem.kt" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_popular.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/ibrahim/moviedbapp/home/tvShow/models/ZipModelTv.kt" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/ibrahim/moviedbapp/home/movie/mvp/HomeModel.kt" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/ibrahim/moviedbapp/home/tvShow/api/TvShowApi.kt" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/ibrahim/moviedbapp/home/tvShow/mvp/TvShowModel.kt" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/ibrahim/moviedbapp/home/ui/HomeActivity.kt" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/ibrahim/moviedbapp/home/tvShow/mvp/TvShowContract.kt" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_tv.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/values/colors.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/animator/cualquer.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/ibrahim/moviedbapp/commons/enums/BundlesKey.kt" />
@@ -342,22 +267,29 @@
         <option value="$PROJECT_DIR$/app/src/main/java/com/ibrahim/moviedbapp/details/di/DetailsComponent.kt" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/ibrahim/moviedbapp/app/network/ApiModule.kt" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/ibrahim/moviedbapp/app/di/AppComponent.kt" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/ibrahim/moviedbapp/details/api/DetailsApi.kt" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/ibrahim/moviedbapp/details/mvp/DetailsModel.kt" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/ibrahim/moviedbapp/details/mvp/DetailsContract.kt" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/ibrahim/moviedbapp/details/mvp/DetailsPresenter.kt" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/ibrahim/moviedbapp/details/ui/DetailsMovieFragment.kt" />
         <option value="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_details_movie.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/ibrahim/moviedbapp/home/tvShow/mvp/TvShowPresenter.kt" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/ibrahim/moviedbapp/home/movie/mvp/HomePresenter.kt" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/ibrahim/moviedbapp/home/movie/di/HomeComponent.kt" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/ibrahim/moviedbapp/details/models/ZipDetailsMovie.kt" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/ibrahim/moviedbapp/details/mvp/DetailsModel.kt" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/ibrahim/moviedbapp/details/api/DetailsApi.kt" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/ibrahim/moviedbapp/details/mvp/DetailsContract.kt" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/ibrahim/moviedbapp/details/models/ResultsItem.kt" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/ibrahim/moviedbapp/details/models/ResponseVideos.kt" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/ibrahim/moviedbapp/home/ui/HomeActivity.kt" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/ibrahim/moviedbapp/details/mvp/DetailsPresenter.kt" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/ibrahim/moviedbapp/home/tvShow/ui/TvFragment.kt" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/ibrahim/moviedbapp/home/movie/ui/MovieFragment.kt" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_details_movie.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/ibrahim/moviedbapp/details/ui/DetailsMovieFragment.kt" />
+        <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_popular.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_tv.xml" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="-7" />
     <option name="width" value="734" />
     <option name="height" value="867" />
@@ -368,7 +300,54 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="AndroidView" />
+      <pane id="AndroidView">
+        <subPane>
+          <expand>
+            <path>
+              <item name="MovieDbApp" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+            </path>
+            <path>
+              <item name="MovieDbApp" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
+            </path>
+            <path>
+              <item name="MovieDbApp" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
+              <item name="moviedbapp" type="cbb59c9e:AndroidPsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="MovieDbApp" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
+              <item name="moviedbapp" type="cbb59c9e:AndroidPsiDirectoryNode" />
+              <item name="home" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="MovieDbApp" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
+              <item name="moviedbapp" type="cbb59c9e:AndroidPsiDirectoryNode" />
+              <item name="home" type="462c0819:PsiDirectoryNode" />
+              <item name="movie" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="MovieDbApp" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="res" type="d4f16f75:AndroidResFolderNode" />
+            </path>
+            <path>
+              <item name="MovieDbApp" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="res" type="d4f16f75:AndroidResFolderNode" />
+              <item name="layout" type="ddeffd01:AndroidResFolderTypeNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
       <pane id="PackagesPane">
         <subPane>
           <expand>
@@ -387,11 +366,6 @@
               <item name="MovieDbApp" type="b2602c69:ProjectViewProjectNode" />
               <item name="MovieDbApp" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
             </path>
-            <path>
-              <item name="MovieDbApp" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MovieDbApp" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -402,6 +376,7 @@
   <component name="PropertiesComponent">
     <property name="android.sdk.path" value="$PROJECT_DIR$/../../android-sdk" />
     <property name="device.picker.selection" value="5200f4e14fc7950f" />
+    <property name="last_directory_selection" value="$PROJECT_DIR$/app/src/main/res/drawable-v24" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../../hostienda/bettingapp" />
     <property name="not.eligible.for.single.variant.sync" value="true" />
     <property name="project.structure.last.edited" value="Dependencies" />
@@ -411,11 +386,6 @@
     <property name="show.migrate.to.gradle.popup" value="false" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\ibrah\Documents\codigos\kotlin\MovieDbApp\app\src\main\java\com\ibrahim\moviedbapp\details\ui" />
-      <recent name="C:\Users\ibrah\Documents\codigos\kotlin\MovieDbApp\app\libs" />
-      <recent name="C:\Users\ibrah\Documents\codigos\kotlin\MovieDbApp\app\src\main\java\com\ibrahim\moviedbapp\home\ui\fragment" />
-    </key>
     <key name="MoveKotlinTopLevelDeclarationsDialog.RECENTS_KEY">
       <recent name="com.ibrahim.moviedbapp.commons.adapter" />
       <recent name="com.ibrahim.moviedbapp.home.enums" />
@@ -423,12 +393,18 @@
       <recent name="com.ibrahim.moviedbapp.home.tvShow" />
       <recent name="com.ibrahim.moviedbapp.home.movie.ui" />
     </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\ibrah\Documents\codigos\kotlin\MovieDbApp\app\src\main\res\drawable-v24" />
+      <recent name="C:\Users\ibrah\Documents\codigos\kotlin\MovieDbApp\app\src\main\res\animator" />
+      <recent name="C:\Users\ibrah\Documents\codigos\kotlin\MovieDbApp\app\src\main\res" />
+    </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="com.ibrahim.moviedbapp.home.movie" />
     </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\ibrah\Documents\codigos\kotlin\MovieDbApp\app\src\main\res\animator" />
-      <recent name="C:\Users\ibrah\Documents\codigos\kotlin\MovieDbApp\app\src\main\res" />
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\ibrah\Documents\codigos\kotlin\MovieDbApp\app\src\main\java\com\ibrahim\moviedbapp\details\ui" />
+      <recent name="C:\Users\ibrah\Documents\codigos\kotlin\MovieDbApp\app\libs" />
+      <recent name="C:\Users\ibrah\Documents\codigos\kotlin\MovieDbApp\app\src\main\java\com\ibrahim\moviedbapp\home\ui\fragment" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -532,7 +508,7 @@
     <editor active="true" />
     <layout>
       <window_info id="Captures" order="0" side_tool="true" weight="0.25" />
-      <window_info content_ui="combo" id="Project" order="1" weight="0.20845272" />
+      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.20845272" />
       <window_info id="Structure" order="2" side_tool="true" />
       <window_info id="Build Variants" order="3" side_tool="true" />
       <window_info id="Image Layers" order="4" />
@@ -558,59 +534,10 @@
       <window_info anchor="right" id="Flutter Outline" order="4" />
       <window_info anchor="right" id="Gradle" order="5" />
       <window_info anchor="right" id="Palette&#9;" order="6" />
-      <window_info anchor="right" id="Preview" order="7" weight="0.23567335" />
+      <window_info anchor="right" id="Preview" order="7" visible="true" weight="0.23567335" />
     </layout>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_popular.xml">
-      <provider editor-type-id="android-designer2" />
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="143">
-          <caret line="9" column="49" lean-forward="true" selection-start-line="7" selection-start-column="3" selection-end-line="9" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ibrahim/moviedbapp/home/movie/api/MovieApi.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="20" column="122" lean-forward="true" selection-start-line="19" selection-start-column="4" selection-end-line="20" selection-end-column="122" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ibrahim/moviedbapp/home/tvShow/models/ZipModelTv.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="29" selection-start-line="8" selection-start-column="29" selection-end-line="8" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ibrahim/moviedbapp/home/tvShow/mvp/TvShowModel.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="39" column="5" lean-forward="true" selection-start-line="39" selection-start-column="5" selection-end-line="39" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ibrahim/moviedbapp/home/tvShow/api/TvShowApi.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="19" lean-forward="true" selection-start-column="19" selection-end-column="19" />
-          <folding>
-            <element signature="e#48#258#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ibrahim/moviedbapp/home/movie/models/ZipMovie.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="38" selection-start-line="9" selection-start-column="4" selection-end-line="9" selection-end-column="38" />
-          <folding>
-            <element signature="e#50#151#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ibrahim/moviedbapp/app/network/CallbackHandlingObserver.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="539">
@@ -625,14 +552,6 @@
           <folding>
             <element signature="e#48#158#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_tv.xml">
-      <provider editor-type-id="android-designer2" />
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="426">
-          <caret line="31" column="12" selection-start-line="31" selection-start-column="12" selection-end-line="31" selection-end-column="12" />
         </state>
       </provider>
     </entry>
@@ -663,7 +582,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ibrahim/moviedbapp/details/models/ResponseSimilarMovie.kt" />
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ibrahim/moviedbapp/details/models/ResultsItem.kt" />
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ibrahim/moviedbapp/home/movie/models/ResultsItem.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="527">
@@ -699,16 +617,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="408">
           <caret line="26" selection-start-line="26" selection-end-line="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ibrahim/moviedbapp/commons/adapter/CategoryAdapter.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="23" selection-start-line="15" selection-start-column="23" selection-end-line="15" selection-end-column="23" />
-          <folding>
-            <element signature="e#48#182#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -820,60 +728,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ibrahim/moviedbapp/details/api/DetailsApi.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="14" column="18" selection-start-line="14" selection-start-column="18" selection-end-line="14" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ibrahim/moviedbapp/details/mvp/DetailsModel.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="16" column="8" selection-start-line="16" selection-start-column="8" selection-end-line="16" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ibrahim/moviedbapp/details/mvp/DetailsContract.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="40" selection-start-line="12" selection-start-column="40" selection-end-line="12" selection-end-column="40" />
-          <folding>
-            <element signature="e#44#282#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ibrahim/moviedbapp/details/mvp/DetailsPresenter.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="47" column="73" selection-start-line="47" selection-start-column="73" selection-end-line="47" selection-end-column="73" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ibrahim/moviedbapp/home/ui/HomeActivity.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="37" column="24" selection-start-line="37" selection-start-column="24" selection-end-line="37" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="559">
           <caret line="34" column="45" selection-start-line="34" selection-start-column="45" selection-end-line="34" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_details_movie.xml">
-      <provider editor-type-id="android-designer2" />
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="494">
-          <caret line="113" column="49" selection-start-line="113" selection-start-column="49" selection-end-line="113" selection-end-column="49" />
-          <folding>
-            <element signature="e#3477#3499#0" expanded="true" />
-            <element signature="e#4435#4459#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -898,13 +756,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ibrahim/moviedbapp/details/ui/DetailsMovieFragment.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="205">
-          <caret line="106" selection-start-line="106" selection-end-line="106" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ibrahim/moviedbapp/home/movie/di/HomeComponent.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
@@ -912,17 +763,152 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ibrahim/moviedbapp/home/tvShow/ui/TvFragment.kt">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ibrahim/moviedbapp/details/api/DetailsApi.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1325">
-          <caret line="56" column="72" selection-start-line="56" selection-end-line="57" />
+        <state relative-caret-position="170">
+          <caret line="17" column="111" selection-start-line="17" selection-start-column="111" selection-end-line="17" selection-end-column="111" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ibrahim/moviedbapp/details/mvp/DetailsModel.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="13" column="16" selection-start-line="13" selection-start-column="16" selection-end-line="13" selection-end-column="16" />
+          <folding>
+            <element signature="e#44#300#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ibrahim/moviedbapp/details/mvp/DetailsContract.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="24" selection-start-line="12" selection-start-column="24" selection-end-line="12" selection-end-column="24" />
+          <folding>
+            <element signature="e#44#282#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ibrahim/moviedbapp/details/models/ZipDetailsMovie.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="26" selection-start-line="4" selection-start-column="11" selection-end-line="4" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ibrahim/moviedbapp/details/models/ResultsItem.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="29" column="1" selection-start-line="29" selection-start-column="1" selection-end-line="29" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ibrahim/moviedbapp/details/models/ResponseVideos.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" selection-start-line="2" selection-end-line="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/build/tmp/kapt3/stubs/debug/com/ibrahim/moviedbapp/details/models/ResponseVideos.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" selection-start-line="5" selection-end-line="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ibrahim/moviedbapp/home/ui/HomeActivity.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="187" column="8" selection-start-line="187" selection-start-column="8" selection-end-line="187" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ibrahim/moviedbapp/commons/adapter/CategoryAdapter.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" selection-start-line="6" selection-end-line="6" />
+          <folding>
+            <element signature="e#48#182#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ibrahim/moviedbapp/commons/adapter/CategoryViewHolder.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="59">
+          <caret line="15" selection-start-line="15" selection-end-line="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ibrahim/moviedbapp/details/mvp/DetailsPresenter.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="103">
+          <caret line="50" column="71" selection-start-line="50" selection-start-column="71" selection-end-line="50" selection-end-column="71" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ibrahim/moviedbapp/home/movie/ui/MovieFragment.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="471">
-          <caret line="134" column="9" selection-start-line="134" selection-start-column="9" selection-end-line="134" selection-end-column="9" />
+        <state relative-caret-position="86">
+          <caret line="155" column="35" selection-start-line="155" selection-start-column="35" selection-end-line="155" selection-end-column="35" />
+          <folding>
+            <element signature="e#46#1299#0" expanded="true" />
+            <element signature="e#4413#5547#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_details_movie.xml">
+      <provider editor-type-id="android-designer2" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="107" column="48" selection-start-line="107" selection-start-column="48" selection-end-line="107" selection-end-column="48" />
+          <folding>
+            <element signature="e#4524#4542#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ibrahim/moviedbapp/details/ui/DetailsMovieFragment.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="59">
+          <caret line="75" column="47" selection-start-line="75" selection-start-column="47" selection-end-line="75" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
+      <provider editor-type-id="android-manifest" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="13" column="46" selection-start-line="13" selection-start-column="46" selection-end-line="13" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ibrahim/moviedbapp/home/tvShow/ui/TvFragment.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="366">
+          <caret line="172" column="49" lean-forward="true" selection-start-line="172" selection-start-column="49" selection-end-line="172" selection-end-column="49" />
+          <folding>
+            <element signature="e#47#1867#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_popular.xml">
+      <provider editor-type-id="android-designer2" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="24" column="44" selection-start-line="24" selection-start-column="40" selection-end-line="24" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_tv.xml">
+      <provider editor-type-id="android-designer2" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="30" column="44" selection-start-line="30" selection-start-column="44" selection-end-line="30" selection-end-column="44" />
         </state>
       </provider>
     </entry>

@@ -1,12 +1,15 @@
 package com.ibrahim.moviedbapp.details.ui
 
+import android.annotation.SuppressLint
 import android.content.Context
+import android.graphics.Color
 import android.net.Uri
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.webkit.WebChromeClient
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -17,6 +20,7 @@ import com.ibrahim.moviedbapp.commons.enums.BundlesKey
 import com.ibrahim.moviedbapp.commons.enums.TypeScreen
 import com.ibrahim.moviedbapp.commons.models.ResponseCategory
 import com.ibrahim.moviedbapp.details.di.DetailsModule
+import com.ibrahim.moviedbapp.details.models.ResponseVideos
 import com.ibrahim.moviedbapp.details.mvp.DetailsContract
 import com.ibrahim.moviedbapp.details.mvp.DetailsPresenter
 import com.ibrahim.moviedbapp.home.movie.adapter.MovieAdapter
@@ -26,6 +30,7 @@ import com.ibrahim.moviedbapp.home.tvShow.adapter.TvShowAdapter
 import com.ibrahim.moviedbapp.home.tvShow.models.ResponseTvShow
 import com.ibrahim.moviedbapp.home.tvShow.models.ResultsItemTv
 import com.squareup.picasso.Picasso
+import kotlinx.android.synthetic.main.app_bar_main.*
 import kotlinx.android.synthetic.main.fragment_details_movie.*
 import javax.inject.Inject
 
@@ -66,6 +71,17 @@ class DetailsMovieFragment : Fragment(),DetailsContract.View,MovieAdapter.Listen
         setupRv()
     }
 
+    override fun succesfullVideosMovie(responseVideos: ResponseVideos) {
+        webView.visibility = View.VISIBLE
+        tvHintWebView.visibility = View.VISIBLE
+        for (item in responseVideos.results!!){
+            if (item?.type == "Trailer"){
+                setubWebView(item.key.toString())
+                return
+            }
+        }
+    }
+
     override fun succesfullSimilarTv(responseTvShow: ResponseTvShow) {
         adapterTv.setListItem(responseTvShow.results!!)
         setupRv()
@@ -76,7 +92,7 @@ class DetailsMovieFragment : Fragment(),DetailsContract.View,MovieAdapter.Listen
     }
 
     override fun showProgress(isShow: Boolean) {
-        progressBarDetails.visibility = if (isShow) View.VISIBLE else View.GONE
+        progressBarDetails?.visibility = if (isShow) View.VISIBLE else View.GONE
     }
 
     override fun makeToast(msg: Int) {
@@ -99,7 +115,7 @@ class DetailsMovieFragment : Fragment(),DetailsContract.View,MovieAdapter.Listen
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-
+        requireActivity().bottom_navigation.visibility = View.GONE
         typeScreen = arguments?.getString(BundlesKey.ARG_TYPE_SCREEN.name) ?: "null"
         responseCategory = arguments?.getParcelable(BundlesKey.ARG_LIST_CATEGORY.name)
 
@@ -113,7 +129,17 @@ class DetailsMovieFragment : Fragment(),DetailsContract.View,MovieAdapter.Listen
 
     }
 
+    @SuppressLint("SetJavaScriptEnabled")
+    fun setubWebView(keyVideo:String){
+        webView.setBackgroundColor(Color.TRANSPARENT)
+        webView.settings.javaScriptEnabled = true
+        webView.webChromeClient = WebChromeClient()
+        webView.loadData("<iframe width=320 height=315 src=https://www.youtube.com/embed/$keyVideo frameborder=0 allow=accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture allowfullscreen></iframe>","text/html" , "utf-8" )
+    }
+
+    @SuppressLint("SetJavaScriptEnabled")
     fun setupView(){
+
         if (typeScreen == TypeScreen.MOVIE.name){
             presenter.getSimilarMovie(responseMovie.id.toString())
             Picasso.get().load(Utils.getImageUrlLarge(responseMovie.posterPath!!)).placeholder(R.drawable.placeholder_movie).fit().into(ivPoster)
@@ -137,14 +163,7 @@ class DetailsMovieFragment : Fragment(),DetailsContract.View,MovieAdapter.Listen
 
 
 
-    override fun onAttach(context: Context) {
-        super.onAttach(context)
-//        if (context is OnFragmentInteractionListener) {
-//            listener = context
-//        } else {
-//            throw RuntimeException("$context must implement OnFragmentInteractionListener")
-//        }
-    }
+
 
     override fun onDetach() {
         super.onDetach()

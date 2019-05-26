@@ -5,6 +5,7 @@ import android.util.Log
 import com.ibrahim.moviedbapp.R
 import com.ibrahim.moviedbapp.app.network.CallbackHandlingObserver
 import com.ibrahim.moviedbapp.commons.models.ResponseCategory
+import com.ibrahim.moviedbapp.details.models.ZipDetailsMovie
 import com.ibrahim.moviedbapp.home.movie.models.ResponseMovie
 import com.ibrahim.moviedbapp.home.tvShow.models.ResponseTvShow
 import java.util.*
@@ -15,10 +16,12 @@ class DetailsPresenter(private var view: DetailsContract.View?,private val model
     @SuppressLint("CheckResult")
     override fun getSimilarMovie(id: String) {
         view?.showProgress(true)
-        model.getSimilarMovie(id).subscribeWith(object : CallbackHandlingObserver<ResponseMovie>(this,"similar movie"){
-            override fun onSuccess(data: ResponseMovie) {
+        model.getSimilarMovie(id).subscribeWith(object : CallbackHandlingObserver<ZipDetailsMovie>(this,"similar movie"){
+            override fun onSuccess(data: ZipDetailsMovie) {
                 view?.showProgress(false)
-                view?.succesfullSimilarMovie(data)
+                view?.succesfullSimilarMovie(data.responseSimiliares!!)
+                view?.succesfullVideosMovie(data.responseVideos!!)
+
             }
 
         })
@@ -44,8 +47,8 @@ class DetailsPresenter(private var view: DetailsContract.View?,private val model
             }
         }
 
-        Log.i(TAG, "getGeners: -->${listGenersString.joinToString(separator = ",")} ")
-       view?.setGenrsList(listGenersString.joinToString(separator = ","))
+        Log.i(TAG, "getGeners: -->${listGenersString.joinToString(separator = ",")}")
+       view?.setGenrsList(listGenersString.joinToString(separator = ", "))
 
     }
 

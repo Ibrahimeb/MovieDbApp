@@ -3,11 +3,8 @@ package com.ibrahim.moviedbapp.home.tvShow.ui
 import android.content.Context
 import android.os.Bundle
 import android.util.Log
+import android.view.*
 import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.MenuItem
-import android.view.View
-import android.view.ViewGroup
 import androidx.core.os.bundleOf
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
@@ -32,6 +29,20 @@ import com.ibrahim.moviedbapp.home.tvShow.mvp.TvShowPresenter
 import kotlinx.android.synthetic.main.fragment_tv.*
 import kotlinx.android.synthetic.main.fragment_tv.mainProgress
 import javax.inject.Inject
+import android.view.animation.Animation
+import android.view.View.MeasureSpec
+import android.view.View.MeasureSpec.UNSPECIFIED
+import android.view.View.MeasureSpec.makeMeasureSpec
+import android.view.View.MeasureSpec.EXACTLY
+import android.opengl.ETC1.getWidth
+import android.app.ActionBar
+import android.view.animation.Transformation
+import androidx.core.content.ContextCompat
+import android.widget.LinearLayout
+
+
+
+
 
 
 class TvFragment : Fragment(), TvShowContract.View,TvShowAdapter.Listener,CategoryAdapter.Listener {
@@ -49,6 +60,61 @@ class TvFragment : Fragment(), TvShowContract.View,TvShowAdapter.Listener,Catego
     val adapter by lazy { TvShowAdapter(this) }
 
 
+    private fun expand(v: View) {
+        v.measure(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT)
+        val targetHeight = v.measuredHeight
+
+        // Older versions of android (pre API 21) cancel animations for views with a height of 0.
+        v.layoutParams.height = 1
+        v.visibility = View.VISIBLE
+        val a = object : Animation() {
+            override fun applyTransformation(interpolatedTime: Float, t: Transformation) {
+                v.layoutParams.height = if (interpolatedTime == 1f)
+                    LinearLayout.LayoutParams.WRAP_CONTENT
+                else
+                    (targetHeight * interpolatedTime).toInt()
+                v.requestLayout()
+
+//                if (interpolatedTime == 1f) {
+//                   // llContentLogin.setBackgroundColor(ContextCompat.getColor(context!!, R.color.t))
+//                }
+            }
+
+            override fun willChangeBounds(): Boolean {
+                return true
+            }
+        }
+
+        // 1dp/ms
+        a.duration = ((targetHeight / v.context.resources.displayMetrics.density).toInt()).toLong()
+        v.startAnimation(a)
+    }
+
+
+    private fun collapse(v: View) {
+        val initialHeight = v.measuredHeight
+
+        val a = object : Animation() {
+            override fun applyTransformation(interpolatedTime: Float, t: Transformation) {
+                if (interpolatedTime == 1f) {
+                    v.visibility = View.GONE
+                    rv_filter_tv.setBackgroundColor(ContextCompat.getColor(context!!, android.R.color.transparent))
+
+                } else {
+                    v.layoutParams.height = initialHeight - (initialHeight * interpolatedTime).toInt()
+                    v.requestLayout()
+                }
+            }
+
+            override fun willChangeBounds(): Boolean {
+                return true
+            }
+        }
+
+        // 1dp/ms
+        a.duration = ((initialHeight / v.context.resources.displayMetrics.density).toInt()).toLong()
+        v.startAnimation(a)
+    }
 
 
     override fun goToDetails(item:ResultsItemTv) {
@@ -72,14 +138,21 @@ class TvFragment : Fragment(), TvShowContract.View,TvShowAdapter.Listener,Catego
     }
 
 
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        super.onCreateOptionsMenu(menu, inflater)
+        inflater.inflate(R.menu.main, menu)
+
+    }
+
+
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when(item.itemId){
             R.id.action_filter -> {
                 categoryVisible = if (!categoryVisible){
-                    showFilterCategory(View.VISIBLE)
+                    expand(rv_filter_tv)
                     true
                 } else{
-                    showFilterCategory(View.GONE)
+                  collapse(rv_filter_tv)
                     false
                 }
             }
