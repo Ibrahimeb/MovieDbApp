@@ -5,7 +5,22 @@
             app:startDestination="@+id/popularFragment">
 
     <fragment android:id="@+id/popularFragment" android:name="com.ibrahim.moviedbapp.home.movie.ui.MovieFragment"
-              android:label="fragment_popular" tools:layout="@layout/fragment_popular"/>
+              android:label="fragment_popular" tools:layout="@layout/fragment_popular">
+        <action android:id="@+id/action_popularFragment_to_detailsMovieFragment"
+                app:destination="@id/detailsMovieFragment" app:enterAnim="@animator/slide_right_in"
+                app:exitAnim="@animator/slide_left_out" app:popEnterAnim="@animator/slide_left_in"
+                app:popExitAnim="@animator/slide_right_out"/>
+    </fragment>
     <fragment android:id="@+id/tvFragment" android:name="com.ibrahim.moviedbapp.home.tvShow.ui.TvFragment" android:label="fragment_tv"
-              tools:layout="@layout/fragment_tv"/>
+              tools:layout="@layout/fragment_tv">
+        <action android:id="@+id/action_tvFragment_to_detailsMovieFragment" app:destination="@id/detailsMovieFragment"
+                app:enterAnim="@animator/slide_right_in"
+                app:exitAnim="@animator/slide_left_out" app:popEnterAnim="@animator/slide_left_in"
+                app:popExitAnim="@animator/slide_right_out"
+        />
+    </fragment>
+    <fragment android:id="@+id/detailsMovieFragment" android:name="com.ibrahim.moviedbapp.details.ui.DetailsMovieFragment"
+              android:label="fragment_details_movie" tools:layout="@layout/fragment_details_movie">
+        <action android:id="@+id/action_detailsMovieFragment_self" app:destination="@id/detailsMovieFragment"/>
+    </fragment>
 </navigation>

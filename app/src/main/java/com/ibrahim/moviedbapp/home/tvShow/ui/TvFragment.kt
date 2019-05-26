@@ -8,6 +8,9 @@ import android.view.LayoutInflater
 import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.os.bundleOf
+import androidx.navigation.findNavController
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -22,11 +25,10 @@ import com.ibrahim.moviedbapp.commons.models.ResponseCategory
 import com.ibrahim.moviedbapp.home.tvShow.adapter.TvShowAdapter
 import com.ibrahim.moviedbapp.home.tvShow.di.TvshowModule
 import com.ibrahim.moviedbapp.home.tvShow.models.ResponseTvShow
-import com.ibrahim.moviedbapp.home.tvShow.models.ResultsItem
+import com.ibrahim.moviedbapp.home.tvShow.models.ResultsItemTv
 import com.ibrahim.moviedbapp.home.tvShow.models.ZipModelTv
 import com.ibrahim.moviedbapp.home.tvShow.mvp.TvShowContract
 import com.ibrahim.moviedbapp.home.tvShow.mvp.TvShowPresenter
-import kotlinx.android.synthetic.main.fragment_popular.*
 import kotlinx.android.synthetic.main.fragment_tv.*
 import kotlinx.android.synthetic.main.fragment_tv.mainProgress
 import javax.inject.Inject
@@ -35,6 +37,7 @@ import javax.inject.Inject
 class TvFragment : Fragment(), TvShowContract.View,TvShowAdapter.Listener,CategoryAdapter.Listener {
 
 
+    private var category:ResponseCategory?=null
     @Inject
     lateinit var presenter:TvShowPresenter
     private val component by lazy { App.get().component.plus(TvshowModule(this)) }
@@ -46,8 +49,15 @@ class TvFragment : Fragment(), TvShowContract.View,TvShowAdapter.Listener,Catego
     val adapter by lazy { TvShowAdapter(this) }
 
 
-    override fun goToDetails() {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+
+
+    override fun goToDetails(item:ResultsItemTv) {
+        val bundle = Bundle()
+        bundle.putParcelable(BundlesKey.ARG_ITEM_MOVIE.name,item)
+        bundle.putParcelable(BundlesKey.ARG_LIST_CATEGORY.name,category)
+        bundle.putString(BundlesKey.ARG_TYPE_SCREEN.name,TypeScreen.TV_SHOW.name)
+
+        findNavController().navigate(R.id.action_tvFragment_to_detailsMovieFragment,bundle)
     }
 
     private var listener: OnFragmentInteractionListener? = null
@@ -94,13 +104,13 @@ class TvFragment : Fragment(), TvShowContract.View,TvShowAdapter.Listener,Catego
         super.onViewCreated(view, savedInstanceState)
 
         val data = arguments?.getParcelable<ResponseTvShow>(BundlesKey.ARG_ITEM_MOVIE.name)
-        val category = arguments?.getParcelable<ResponseCategory>(BundlesKey.ARG_LIST_CATEGORY.name)
-        typeScreen = arguments?.getString(BundlesKey.ARG_TYPE_SCREEN_MOVIE.name).toString()
+        category = arguments?.getParcelable(BundlesKey.ARG_LIST_CATEGORY.name)
+        typeScreen = arguments?.getString(BundlesKey.ARG_TYPE_SCREEN.name).toString()
 
         if (typeScreen == "null")
             typeScreen = TypeScreen.POPULAR.name
 
-
+        Log.i(TAG, "onViewCreated: ---> $data")
         if (data == null)
             presenter.getTvShow()
         else{
@@ -110,7 +120,7 @@ class TvFragment : Fragment(), TvShowContract.View,TvShowAdapter.Listener,Catego
         }
     }
 
-    fun setupRv(list: List<ResultsItem>) {
+    fun setupRv(list: List<ResultsItemTv>) {
         rv_tv_show?.layoutManager = LinearLayoutManager(requireContext(), RecyclerView.VERTICAL, false)
         rv_tv_show?.isNestedScrollingEnabled = false
         rv_tv_show?.setHasFixedSize(true)
@@ -139,6 +149,7 @@ class TvFragment : Fragment(), TvShowContract.View,TvShowAdapter.Listener,Catego
     override fun onDetach() {
         super.onDetach()
         listener = null
+        presenter.onDetach()
     }
 
 
@@ -155,6 +166,7 @@ class TvFragment : Fragment(), TvShowContract.View,TvShowAdapter.Listener,Catego
     }
 
     override fun succesfullValidateTypeScreen(zip: ZipModelTv?) {
+        Log.i(TAG, "succesfullValidateTypeScreen:  --> $typeScreen");
         when(typeScreen){
             TypeScreen.TO_RATE.name -> setupRv(zip?.topRateResponse?.results!!)
             TypeScreen.UPCOMING.name -> setupRv(zip?.lastedResponse?.results!!)
@@ -165,10 +177,11 @@ class TvFragment : Fragment(), TvShowContract.View,TvShowAdapter.Listener,Catego
 
 
     override fun succesfullSetCategory(zip: ZipModelTv?) {
+        category=zip?.categoryTvShow
         zip?.categoryTvShow?.genres?.let { setupRvCateg(it) }
     }
 
-    override fun updateAdapter(list: List<ResultsItem>) {
+    override fun updateAdapter(list: List<ResultsItemTv>) {
         adapter.setListItem(list)
     }
 

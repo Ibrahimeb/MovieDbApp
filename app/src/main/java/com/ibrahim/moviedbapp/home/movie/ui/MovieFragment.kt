@@ -1,13 +1,11 @@
 package com.ibrahim.moviedbapp.home.movie.ui
 
-import android.annotation.SuppressLint
 import android.content.Context
-import android.opengl.Visibility
 import android.os.Bundle
 import android.util.Log
 import android.view.*
-import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -27,23 +25,19 @@ import com.ibrahim.moviedbapp.home.movie.models.ZipMovie
 import com.ibrahim.moviedbapp.home.movie.mvp.HomeContract
 import com.ibrahim.moviedbapp.home.movie.mvp.HomePresenter
 import kotlinx.android.synthetic.main.fragment_popular.*
-import org.jetbrains.anko.doAsync
-import org.jetbrains.anko.uiThread
 import javax.inject.Inject
 
 
 class MovieFragment : Fragment(), HomeContract.View, MovieAdapter.Listener,CategoryAdapter.Listener {
+    private var category: ResponseCategory?=null
+    @Inject
+    lateinit var presenter: HomePresenter
     private var listener: OnFragmentInteractionListener? = null
     private val TAG = MovieFragment::class.java.simpleName
     private var zipAux:ResponseMovie?=null
     private var categoryVisible = false
 
     private val movieAdapter by lazy { MovieAdapter(this) }
-
-    @Inject
-    lateinit var presenter: HomePresenter
-
-
     private lateinit var typeScreen:String
 
 
@@ -74,6 +68,7 @@ class MovieFragment : Fragment(), HomeContract.View, MovieAdapter.Listener,Categ
     }
 
     override fun succesfullValidateTypeScreen(zip:ZipMovie?) {
+        Log.i(TAG, "succesfullValidateTypeScreen:  --> $typeScreen");
         when(typeScreen){
             TypeScreen.TO_RATE.name -> setupRv(zip?.topRateList?.results!!)
             TypeScreen.UPCOMING.name -> setupRv(zip?.upComingList?.results!!)
@@ -82,6 +77,7 @@ class MovieFragment : Fragment(), HomeContract.View, MovieAdapter.Listener,Categ
     }
 
     override fun succesfullSetCategory(zip: ZipMovie?) {
+        category=zip?.categoryMovie
         zip?.categoryMovie?.genres?.let { setupRvCateg(it) }
     }
 
@@ -120,27 +116,27 @@ class MovieFragment : Fragment(), HomeContract.View, MovieAdapter.Listener,Categ
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
         val data = arguments?.getParcelable<ResponseMovie>(BundlesKey.ARG_ITEM_MOVIE.name)
-        val category = arguments?.getParcelable<ResponseCategory>(BundlesKey.ARG_LIST_CATEGORY.name)
-        typeScreen = arguments?.getString(BundlesKey.ARG_TYPE_SCREEN_MOVIE.name).toString()
+        category = arguments?.getParcelable(BundlesKey.ARG_LIST_CATEGORY.name)
+        typeScreen = arguments?.getString(BundlesKey.ARG_TYPE_SCREEN.name).toString()
 
         if (typeScreen == "null")
             typeScreen = TypeScreen.POPULAR.name
 
-
+        Log.i(TAG, "onResume: ---> $data")
         if (data == null)
             presenter.getMovie()
         else{
+            Log.i(TAG, "onResume: ->");
             zipAux = data
             setupRv(data.results!!)
             setupRvCateg(category?.genres!!)
         }
+
+
     }
 
-    override fun onDestroyView() {
-        super.onDestroyView()
-        presenter.onDetach()
-    }
 
     fun setupRv(list: List<ResultsItem>) {
         rv_popular_movie?.layoutManager = LinearLayoutManager(requireContext(), RecyclerView.VERTICAL, false)
@@ -176,8 +172,13 @@ class MovieFragment : Fragment(), HomeContract.View, MovieAdapter.Listener,Categ
         movieAdapter.setListItem(list)
     }
 
-    override fun gotoDetails() {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+    override fun gotoDetails(item:ResultsItem) {
+
+        val bundle = Bundle()
+        bundle.putParcelable(BundlesKey.ARG_ITEM_MOVIE.name,item)
+        bundle.putString(BundlesKey.ARG_TYPE_SCREEN.name,TypeScreen.MOVIE.name)
+        bundle.putParcelable(BundlesKey.ARG_LIST_CATEGORY.name,category)
+        findNavController().navigate(R.id.action_popularFragment_to_detailsMovieFragment,bundle)
     }
 
     override fun onAttach(context: Context) {
@@ -192,6 +193,7 @@ class MovieFragment : Fragment(), HomeContract.View, MovieAdapter.Listener,Categ
     override fun onDetach() {
         super.onDetach()
         listener = null
+        presenter.onDetach()
     }
 
     /**

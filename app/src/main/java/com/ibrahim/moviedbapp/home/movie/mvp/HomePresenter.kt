@@ -51,13 +51,15 @@ class HomePresenter(private var view: HomeContract.View?, private val homeModel:
 
     @SuppressLint("CheckResult")
     override fun getMovie() {
+        Log.i(TAG, "getMovie: ")
         view?.showProgress(true)
         homeModel.getMovies().subscribeWith(object :CallbackHandlingObserver<ZipMovie>(this,"HomeModel"){
             override fun onSuccess(data: ZipMovie) {
+                Log.i(TAG, "onSuccess: ")
                 view?.showProgress(false)
-                view?.succesfullSetupDrawerImage(data)
-                view?.succesfullSetZipModel(data)
-                view?.succesfullValidateTypeScreen(data)
+                view!!.succesfullSetZipModel(data)
+                view!!.succesfullSetupDrawerImage(data)
+                view!!.succesfullValidateTypeScreen(data)
                 view?.succesfullSetCategory(data)
             }
 

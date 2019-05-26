@@ -4,7 +4,7 @@ import android.annotation.SuppressLint
 import android.util.Log
 import com.ibrahim.moviedbapp.R
 import com.ibrahim.moviedbapp.app.network.CallbackHandlingObserver
-import com.ibrahim.moviedbapp.home.tvShow.models.ResultsItem
+import com.ibrahim.moviedbapp.home.tvShow.models.ResultsItemTv
 import com.ibrahim.moviedbapp.home.tvShow.models.ZipModelTv
 import org.jetbrains.anko.doAsync
 import org.jetbrains.anko.uiThread
@@ -17,6 +17,7 @@ class TvShowPresenter(private var view:TvShowContract.View?, private val model:T
         view?.showProgress(true)
         model.getData().subscribeWith(object : CallbackHandlingObserver<ZipModelTv>(this,"ZIP TV SHOW"){
             override fun onSuccess(data: ZipModelTv) {
+                Log.i(TAG, "onSuccess: ");
                 view?.showProgress(false)
                 view?.succesfullSetZipModel(data)
                 view?.succesfullSetupDrawerImage(data)
@@ -27,10 +28,10 @@ class TvShowPresenter(private var view:TvShowContract.View?, private val model:T
         })
     }
 
-    override fun filterListTvShow(itemFilter: MutableList<Int>, listTarget: List<ResultsItem>) {
+    override fun filterListTvShow(itemFilter: MutableList<Int>, listTarget: List<ResultsItemTv>) {
 
         Log.i(TAG, "filterListMovie: tamaño itemFilter ${itemFilter.size}")
-        val listResult = mutableListOf<ResultsItem>()
+        val listResult = mutableListOf<ResultsItemTv>()
             doAsync {
                 for (item in listTarget){
                     for (gener in item.genreIds!!){

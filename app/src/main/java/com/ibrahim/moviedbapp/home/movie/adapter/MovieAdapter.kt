@@ -25,7 +25,7 @@ class MovieAdapter(val mListener : Listener) : RecyclerView.Adapter<MovieViewHol
     }
 
     interface Listener{
-        fun gotoDetails()
+        fun gotoDetails(item:ResultsItem)
     }
 
 }

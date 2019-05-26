@@ -55,7 +55,7 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
             R.id.nav_popular -> {
 
                 bundle.putString(
-                    BundlesKey.ARG_TYPE_SCREEN_MOVIE.name,
+                    BundlesKey.ARG_TYPE_SCREEN.name,
                     TypeScreen.POPULAR.name)
 
 
@@ -82,7 +82,7 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
             R.id.nav_up_coming -> {
 
                 bundle.putString(
-                    BundlesKey.ARG_TYPE_SCREEN_MOVIE.name,
+                    BundlesKey.ARG_TYPE_SCREEN.name,
                     TypeScreen.UPCOMING.name)
 
                 when(typeView){
@@ -104,7 +104,7 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
             R.id.nav_top_rate -> {
 
                 bundle.putString(
-                    BundlesKey.ARG_TYPE_SCREEN_MOVIE.name,
+                    BundlesKey.ARG_TYPE_SCREEN.name,
                     TypeScreen.TO_RATE.name)
 
 

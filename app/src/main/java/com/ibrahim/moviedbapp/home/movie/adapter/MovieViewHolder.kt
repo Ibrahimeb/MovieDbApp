@@ -25,7 +25,7 @@ class MovieViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
 
         Picasso.get().load(Utils.getImageUrlLarge(item.posterPath!!)).placeholder(R.drawable.placeholder_movie).fit().into(itemView.ivItemMovie)
 
-
+        itemView.setOnClickListener { listener.gotoDetails(item) }
 
     }
 

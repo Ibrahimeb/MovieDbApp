@@ -5,7 +5,7 @@ import com.google.gson.annotations.SerializedName
 import kotlinx.android.parcel.Parcelize
 
 @Parcelize
-data class ResultsItem(
+data class ResultsItemTv(
 
 	@field:SerializedName("first_air_date")
 	val firstAirDate: String? = null,

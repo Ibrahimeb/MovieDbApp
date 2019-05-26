@@ -6,5 +6,5 @@ import dagger.Subcomponent
 @HomeScope
 @Subcomponent (modules = [HomeModule::class])
 interface HomeComponent {
-    fun inject(popularFragment: MovieFragment)
+    fun inject(movieFragment: MovieFragment)
 }
