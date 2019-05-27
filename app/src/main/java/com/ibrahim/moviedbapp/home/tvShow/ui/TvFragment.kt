@@ -273,7 +273,7 @@ class TvFragment : Fragment(), TvShowContract.View,TvShowAdapter.Listener,Catego
     }
 
     override fun showProgress(isShow: Boolean) {
-        mainProgress.visibility = if (isShow) View.VISIBLE else View.GONE
+        mainProgress?.visibility = if (isShow) View.VISIBLE else View.GONE
     }
 
     override fun makeToast(msg: Int) {

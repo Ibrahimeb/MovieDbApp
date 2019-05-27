@@ -57,9 +57,9 @@ class HomePresenter(private var view: HomeContract.View?, private val homeModel:
             override fun onSuccess(data: ZipMovie) {
                 Log.i(TAG, "onSuccess: ")
                 view?.showProgress(false)
-                view!!.succesfullSetZipModel(data)
-                view!!.succesfullSetupDrawerImage(data)
-                view!!.succesfullValidateTypeScreen(data)
+                view?.succesfullSetZipModel(data)
+                view?.succesfullSetupDrawerImage(data)
+                view?.succesfullValidateTypeScreen(data)
                 view?.succesfullSetCategory(data)
             }
 
