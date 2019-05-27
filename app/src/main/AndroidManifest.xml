@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          package="com.ibrahim.moviedbapp">
+          xmlns:tools="http://schemas.android.com/tools" package="com.ibrahim.moviedbapp">
     
 
     <uses-permission android:name="android.permission.INTERNET"/>
@@ -13,9 +13,11 @@
             android:label="@string/app_name"
             android:roundIcon="@drawable/logo1"
             android:supportsRtl="true"
-            android:theme="@style/AppTheme">
+            android:theme="@style/AppTheme"
+            tools:ignore="GoogleAppIndexingWarning">
         <activity
                 android:name=".home.ui.HomeActivity"
+                android:screenOrientation="portrait"
                 android:label="@string/app_name"
                 android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
