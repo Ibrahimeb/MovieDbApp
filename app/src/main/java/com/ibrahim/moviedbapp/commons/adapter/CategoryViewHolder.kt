@@ -8,6 +8,7 @@ import androidx.annotation.LayoutRes
 import androidx.recyclerview.widget.RecyclerView
 import com.ibrahim.moviedbapp.R
 import com.ibrahim.moviedbapp.commons.models.GenresItem
+import com.ibrahim.moviedbapp.inflaterView
 import kotlinx.android.synthetic.main.item_filter_categorys.view.*
 
 class CategoryViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
@@ -29,5 +30,5 @@ class CategoryViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
 }
 
-    fun ViewGroup.inflaterView(@LayoutRes layout:Int, attachToRoot: Boolean = false):View = LayoutInflater.from(this.context).inflate(layout , this, attachToRoot)
+
 

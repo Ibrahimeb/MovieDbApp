@@ -8,22 +8,32 @@ import android.graphics.Movie
 import java.nio.file.Files.size
 
 
-
-class MovieAdapter(val mListener : Listener) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
-    private var isLoadingAdded:Boolean = false
+class MovieAdapter(val mListener: Listener) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
+    private var isLoadingAdded: Boolean = false
     private val list = mutableListOf<ResultsItem>()
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) = MovieViewHolder.newInstance(parent)
+    companion object {
+        const val ITEM = 1
+        const val LOADING = 0
+    }
+
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) =
+        if (viewType == ITEM) MovieViewHolder.newInstance(parent) else LoadingViewHolder.newInstaces(parent)
 
 
     override fun getItemCount() = list.size
 
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
-        (holder as MovieViewHolder).bindViewHolder(list[holder.adapterPosition],mListener)
+        if (getItemViewType(position) == ITEM)
+            (holder as MovieViewHolder).bindViewHolder(list[holder.adapterPosition], mListener)
+        else
+            (holder as LoadingViewHolder).bindViewHolder()
     }
 
-    fun setListItem(list: List<ResultsItem>){
+    override fun getItemViewType(position: Int) = if (position == list.size - 1 && isLoadingAdded) LOADING else ITEM
+
+    fun setListItem(list: List<ResultsItem>) {
         this.list.clear()
         this.list.addAll(list)
         notifyDataSetChanged()
@@ -36,7 +46,7 @@ class MovieAdapter(val mListener : Listener) : RecyclerView.Adapter<RecyclerView
     }
 
     fun addAll(mcList: List<ResultsItem>) {
-       addAll(mcList)
+        addAll(mcList)
     }
 
     private fun remove(item: ResultsItem) {
@@ -67,8 +77,8 @@ class MovieAdapter(val mListener : Listener) : RecyclerView.Adapter<RecyclerView
         isLoadingAdded = false
 
         val position = list.size - 1
-            list.removeAt(position)
-            notifyItemRemoved(position)
+        list.removeAt(position)
+        notifyItemRemoved(position)
 
     }
 
@@ -77,15 +87,8 @@ class MovieAdapter(val mListener : Listener) : RecyclerView.Adapter<RecyclerView
     }
 
 
-
-
-
-
-
-
-
-    interface Listener{
-        fun gotoDetails(item:ResultsItem)
+    interface Listener {
+        fun gotoDetails(item: ResultsItem)
     }
 
 }

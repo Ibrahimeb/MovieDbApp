@@ -17,6 +17,7 @@ import com.ibrahim.moviedbapp.R
 import com.ibrahim.moviedbapp.app.App
 import com.ibrahim.moviedbapp.commons.Utils
 import com.ibrahim.moviedbapp.commons.adapter.CategoryAdapter
+import com.ibrahim.moviedbapp.commons.adapter.PaginationScrollingListener
 import com.ibrahim.moviedbapp.commons.enums.BundlesKey
 import com.ibrahim.moviedbapp.commons.enums.TypeScreen
 import com.ibrahim.moviedbapp.commons.models.GenresItem
@@ -204,11 +205,27 @@ class MovieFragment : Fragment(), HomeContract.View, MovieAdapter.Listener,Categ
 
 
     fun setupRv(list: List<ResultsItem>) {
-        rv_popular_movie?.layoutManager = LinearLayoutManager(requireContext(), RecyclerView.VERTICAL, false)
+        val linearLayoutManager = LinearLayoutManager(requireContext(), RecyclerView.VERTICAL, false)
+        rv_popular_movie?.layoutManager = linearLayoutManager
         rv_popular_movie?.isNestedScrollingEnabled = false
         rv_popular_movie?.setHasFixedSize(true)
         movieAdapter.setListItem(list)
         rv_popular_movie?.adapter = movieAdapter
+
+
+        rv_popular_movie.addOnScrollListener(object : PaginationScrollingListener(linearLayoutManager){
+            override fun loadMoreItems() {
+                TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+            }
+
+            override fun getTotalPageCount() = TOTAL_PAGES
+
+            override fun isLastPage() = lastPage
+
+            override fun isLoading() = loading
+
+
+        })
     }
 
     fun setupRvCateg(list: List<GenresItem>) {
