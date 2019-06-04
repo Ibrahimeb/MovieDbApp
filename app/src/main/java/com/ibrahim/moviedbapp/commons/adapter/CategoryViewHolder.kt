@@ -4,6 +4,7 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.annotation.LayoutRes
 import androidx.recyclerview.widget.RecyclerView
 import com.ibrahim.moviedbapp.R
 import com.ibrahim.moviedbapp.commons.models.GenresItem
@@ -13,7 +14,7 @@ class CategoryViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
     val TAG = CategoryViewHolder::class.java.simpleName
 
     companion object {
-        fun newInstance(parent: ViewGroup) = CategoryViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.item_filter_categorys, parent, false))
+        fun newInstance(parent: ViewGroup) = CategoryViewHolder(parent.inflaterView(R.layout.item_filter_categorys))
     }
 
     fun bindViewHolder(item:GenresItem,listener:CategoryAdapter.Listener){
@@ -26,5 +27,7 @@ class CategoryViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
     }
 
-
 }
+
+    fun ViewGroup.inflaterView(@LayoutRes layout:Int, attachToRoot: Boolean = false):View = LayoutInflater.from(this.context).inflate(layout , this, attachToRoot)
+
