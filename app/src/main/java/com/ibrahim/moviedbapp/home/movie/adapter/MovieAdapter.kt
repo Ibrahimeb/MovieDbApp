@@ -40,28 +40,13 @@ class MovieAdapter(val mListener: Listener) : RecyclerView.Adapter<RecyclerView.
     }
 
 
-    fun add(mc: ResultsItem) {
+    private fun add(mc: ResultsItem) {
         list.add(mc)
         notifyItemInserted(list.size - 1)
     }
 
-    fun addAll(mcList: List<ResultsItem>) {
-        addAll(mcList)
-    }
-
-    private fun remove(item: ResultsItem) {
-        val position = list.indexOf(item)
-        if (position > -1) {
-            list.removeAt(position)
-            notifyItemRemoved(position)
-        }
-    }
-
-    fun clear() {
-        isLoadingAdded = false
-        while (itemCount > 0) {
-            remove(getItem(0))
-        }
+    fun fechPagination(mcList: List<ResultsItem>) {
+        list.addAll(mcList)
     }
 
     fun isEmpty(): Boolean {

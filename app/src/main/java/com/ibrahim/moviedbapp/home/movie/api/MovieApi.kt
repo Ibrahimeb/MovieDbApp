@@ -9,13 +9,13 @@ import retrofit2.http.Query
 interface MovieApi {
 
     @GET("movie/popular")
-    fun getMoviePopular(@Query("api_key") apiKey:String,@Query("language") language:String):Observable<ResponseMovie>
+    fun getMoviePopular(@Query("api_key") apiKey:String,@Query("language") language:String,@Query("page")currentPage:Int):Observable<ResponseMovie>
 
     @GET("movie/upcoming")
-    fun getMovieUpComing(@Query("api_key") apiKey:String,@Query("language") language:String):Observable<ResponseMovie>
+    fun getMovieUpComing(@Query("api_key") apiKey:String,@Query("language") language:String,@Query("page")currentPage:Int):Observable<ResponseMovie>
 
     @GET("movie/top_rated")
-    fun getMovietopRated(@Query("api_key") apiKey:String,@Query("language") language:String):Observable<ResponseMovie>
+    fun getMovietopRated(@Query("api_key") apiKey:String,@Query("language") language:String,@Query("page")currentPage:Int):Observable<ResponseMovie>
 
     @GET("genre/movie/list")
     fun getMovieCategory(@Query("api_key") apiKey:String,@Query("language") language:String): Observable<ResponseCategory>

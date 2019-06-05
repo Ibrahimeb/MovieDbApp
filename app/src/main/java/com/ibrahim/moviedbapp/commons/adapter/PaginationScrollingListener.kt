@@ -12,9 +12,9 @@ abstract class PaginationScrollingListener(val linearLayoutManager: LinearLayout
         val totalItemCount = linearLayoutManager.itemCount
         val  firstVisibleItemPosition = linearLayoutManager.findFirstVisibleItemPosition()
 
-        if (!isLoading() && !isLastPage()){
+        if (!isLoading()){
             if ((visibleItemCount + firstVisibleItemPosition) >= totalItemCount && firstVisibleItemPosition >=0){
-//                loadMoreItem()
+                loadMoreItems()
             }
         }
 
@@ -23,8 +23,8 @@ abstract class PaginationScrollingListener(val linearLayoutManager: LinearLayout
 
 
     protected abstract fun loadMoreItems()
-    abstract fun getTotalPageCount(): Int
-    abstract fun isLastPage(): Boolean
+//    abstract fun getTotalPageCount(): Int
+//    abstract fun isLastPage(): Boolean
     abstract fun isLoading(): Boolean
 
 

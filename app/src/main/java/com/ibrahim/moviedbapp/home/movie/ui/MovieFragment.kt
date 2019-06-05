@@ -42,6 +42,8 @@ class MovieFragment : Fragment(), HomeContract.View, MovieAdapter.Listener,Categ
     private val TAG = MovieFragment::class.java.simpleName
     private var zipAux:ResponseMovie?=null
     private var categoryVisible = false
+    private var isload = false
+    private var currentPage = 1
 
     private val movieAdapter by lazy { MovieAdapter(this) }
     private lateinit var typeScreen:String
@@ -53,6 +55,14 @@ class MovieFragment : Fragment(), HomeContract.View, MovieAdapter.Listener,Categ
 
     override fun makeToast(msg: Int) {
         Utils.makeToast(getString(msg), requireContext())
+    }
+
+    override fun showFooter(isShow: Boolean) {
+        isload = false
+        if (isShow)
+            movieAdapter.addLoadingFooter()
+        else
+            movieAdapter.removeLoadingFooter()
     }
 
     override fun succesfullSetZipModel(zip: ZipMovie?) {
@@ -68,13 +78,9 @@ class MovieFragment : Fragment(), HomeContract.View, MovieAdapter.Listener,Categ
         }
     }
 
-    private fun showFilterCategory(visibility: Int){
-        Log.i(TAG, "showFilterCategory: isvisible --> $categoryVisible ")
-        rv_filter_movie?.visibility = visibility
-    }
 
     override fun succesfullValidateTypeScreen(zip:ZipMovie?) {
-        Log.i(TAG, "succesfullValidateTypeScreen:  --> $typeScreen");
+        Log.i(TAG, "succesfullValidateTypeScreen:  --> $typeScreen")
         when(typeScreen){
             TypeScreen.TO_RATE.name -> setupRv(zip?.topRateList?.results!!)
             TypeScreen.UPCOMING.name -> setupRv(zip?.upComingList?.results!!)
@@ -85,6 +91,10 @@ class MovieFragment : Fragment(), HomeContract.View, MovieAdapter.Listener,Categ
     override fun succesfullSetCategory(zip: ZipMovie?) {
         category=zip?.categoryMovie
         zip?.categoryMovie?.genres?.let { setupRvCateg(it) }
+    }
+
+    override fun succesfullUpdatePopularMovie(popularMovie:ResponseMovie) {
+        movieAdapter.fechPagination(popularMovie.results!!)
     }
 
     private val component by lazy { App.get().component.plus(HomeModule(this)) }
@@ -192,7 +202,7 @@ class MovieFragment : Fragment(), HomeContract.View, MovieAdapter.Listener,Categ
 
         Log.i(TAG, "onResume: ---> $data")
         if (data == null)
-            presenter.getMovie()
+            presenter.getZipMovie(currentPage)
         else{
             Log.i(TAG, "onResume: ->");
             zipAux = data
@@ -215,14 +225,22 @@ class MovieFragment : Fragment(), HomeContract.View, MovieAdapter.Listener,Categ
 
         rv_popular_movie.addOnScrollListener(object : PaginationScrollingListener(linearLayoutManager){
             override fun loadMoreItems() {
-                TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+                isload = true
+                currentPage++
+
+                Log.i(TAG, "loadMoreItems: currentPage $currentPage ")
+                Log.i(TAG, "loadMoreItems: typeScreen $typeScreen ")
+
+                when(typeScreen){
+                    TypeScreen.TO_RATE.name -> {}
+                    TypeScreen.UPCOMING.name ->{}
+                    else ->{presenter.getPopular(currentPage);Log.i(TAG, "loadMoreItems: call presenter ");}
+
+                }
+
             }
 
-            override fun getTotalPageCount() = TOTAL_PAGES
-
-            override fun isLastPage() = lastPage
-
-            override fun isLoading() = loading
+            override fun isLoading() = isload
 
 
         })
@@ -242,11 +260,12 @@ class MovieFragment : Fragment(), HomeContract.View, MovieAdapter.Listener,Categ
         }else
             itemFilter.remove(id)
         Log.i(TAG, "filterBy: --> $typeScreen ")
-        when(typeScreen){
-            TypeScreen.TO_RATE.name -> presenter.filterListMovie(itemFilter,zipAux?.results!!)
-            TypeScreen.UPCOMING.name ->presenter.filterListMovie(itemFilter,zipAux?.results!!)
-            else -> presenter.filterListMovie(itemFilter,zipAux?.results!!)
-        }
+        presenter.filterListMovie(itemFilter,zipAux?.results!!)
+//        when(typeScreen){
+//            TypeScreen.TO_RATE.name -> presenter.filterListMovie(itemFilter,zipAux?.results!!)
+//            TypeScreen.UPCOMING.name ->presenter.filterListMovie(itemFilter,zipAux?.results!!)
+//            else -> presenter.filterListMovie(itemFilter,zipAux?.results!!)
+//        }
 
     }
 

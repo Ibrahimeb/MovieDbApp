@@ -13,18 +13,18 @@ import io.reactivex.schedulers.Schedulers
 
 class HomeModel(private val api: MovieApi) {
 
-    fun getMovies(): Observable<ZipMovie> {
+    fun getZipMovie(currentPage:Int): Observable<ZipMovie> {
 
         val popularObservable: Observable<ResponseMovie> =
-            api.getMoviePopular(Utils.getApiKey(),Utils.getLanguaje()).subscribeOn(Schedulers.io())
+            api.getMoviePopular(Utils.getApiKey(),Utils.getLanguaje(),currentPage).subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
 
         val topRateObservable: Observable<ResponseMovie> =
-            api.getMovietopRated(Utils.getApiKey(),Utils.getLanguaje()).subscribeOn(Schedulers.io())
+            api.getMovietopRated(Utils.getApiKey(),Utils.getLanguaje(),currentPage).subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
 
         val upComingObservable: Observable<ResponseMovie> =
-            api.getMovieUpComing(Utils.getApiKey(),Utils.getLanguaje()).subscribeOn(Schedulers.io())
+            api.getMovieUpComing(Utils.getApiKey(),Utils.getLanguaje(),currentPage).subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
 
         val observableCategorys = api.getMovieCategory(Utils.getApiKey(),Utils.getLanguaje()).subscribeOn(Schedulers.io())
@@ -38,5 +38,19 @@ class HomeModel(private val api: MovieApi) {
             Function4{ popular:ResponseMovie,upComing:ResponseMovie,topRate:ResponseMovie,categorys:ResponseCategory -> ZipMovie(popular,upComing,topRate,categorys)})
 
     }
+
+    fun getPopular(currentPage: Int) = api.getMoviePopular(Utils.getApiKey(),Utils.getLanguaje(),currentPage)
+        .subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread())
+
+    fun getTopRate(currentPage: Int){}
+
+    fun getUpcoming(currentPage: Int){}
+
+
+
+
+
+
+
 }
 
