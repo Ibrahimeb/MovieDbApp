@@ -28,8 +28,6 @@
 
     <string name="connectivity_exception">No connectivity exception</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="todo">TODO</string>
     <string name="action_filter">filter</string>
     <string name="release_date">Release Date:</string>

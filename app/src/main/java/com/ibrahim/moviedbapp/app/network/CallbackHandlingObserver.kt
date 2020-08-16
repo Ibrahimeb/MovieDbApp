@@ -19,9 +19,11 @@ abstract class CallbackHandlingObserver<T>(private val presenter: BaseContract.S
         Log.i("Info", "onError: ex cause-->" + ex.cause)
         Log.i("Info", "onError: ex message-->" + ex.message)
         if (ex is HttpException) {
-            val errorCode = ex.response().code()
+            val errorCode = ex.response()?.code()
             Log.i("Info", "onError: ex-->" + ex.message())
-            handleErrorCode(errorCode, interactor)
+            if (errorCode != null) {
+                handleErrorCode(errorCode, interactor)
+            }
         } else if (ex is SocketTimeoutException) {
             presenter.onTimeoutError(interactor)
 

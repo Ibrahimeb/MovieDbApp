@@ -1,8 +1,6 @@
 package com.ibrahim.moviedbapp.app.network
 
 import android.content.Context
-import android.os.Build
-import com.ibrahim.moviedbapp.BuildConfig
 import com.ibrahim.moviedbapp.app.App
 import com.ibrahim.moviedbapp.app.ApplicationContext
 import com.ibrahim.moviedbapp.app.di.AppModule
@@ -13,8 +11,7 @@ import dagger.Provides
 import okhttp3.*
 import okhttp3.logging.HttpLoggingInterceptor
 import java.io.File
-import java.util.concurrent.TimeUnit
-import javax.inject.Singleton
+
 
 @Module(includes = [AppModule::class])
 class NetworkModule {

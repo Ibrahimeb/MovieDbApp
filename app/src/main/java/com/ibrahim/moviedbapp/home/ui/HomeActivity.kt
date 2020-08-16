@@ -58,10 +58,6 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                     TypeScreen.POPULAR.name
                 )
 
-
-
-
-
                 when (typeView) {
                     TypeScreen.MOVIE.name -> {
                         bundle.putParcelable(BundlesKey.ARG_ITEM_MOVIE.name, zipMovie?.popularList)

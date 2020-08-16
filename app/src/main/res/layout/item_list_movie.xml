@@ -54,6 +54,4 @@
                 app:layout_constraintStart_toStartOf="@+id/tvRate"
                 app:layout_constraintEnd_toEndOf="@+id/tvRate"/>
     </androidx.constraintlayout.widget.ConstraintLayout>
-
-
 </com.google.android.material.card.MaterialCardView>
